@@ -738,7 +738,7 @@
   if (_tt) _tt.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
   function refreshAll(){ refreshCrypto(); refreshUS(); }
   refreshAll();
-  setInterval(refreshAll, 60000);
+  setInterval(refreshAll, 10000);
   // 从后台切回前台时立即刷新（浏览器会节流后台标签页的定时器）
   document.addEventListener('visibilitychange', function(){ if(!document.hidden){ refreshAll(); } });
 })();
