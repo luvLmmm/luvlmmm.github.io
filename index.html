@@ -633,7 +633,7 @@
 
   // ---- 美股快照（科技 + 芯片） ----
   var US_NAMES = {NVDA:'英伟达',AAPL:'苹果',MSFT:'微软',AVGO:'博通',AMD:'超微',TSM:'台积电',
-    MU:'美光',INTC:'英特尔',META:'Meta',GOOGL:'谷歌',AMZN:'亚马逊',ARM:'安谋'};
+    MU:'美光',INTC:'英特尔',META:'Meta',GOOGL:'谷歌',AMZN:'亚马逊',ARM:'安谋',SNDK:'闪迪'};
   var US_SYMS = Object.keys(US_NAMES);
   var US_FALLBACK = [
     {symbol:'NVDA', price:226.94, chg:-1.02},
@@ -647,7 +647,8 @@
     {symbol:'META', price:744.79, chg:3.63},
     {symbol:'GOOGL', price:353.86, chg:0.63},
     {symbol:'AMZN', price:261.14, chg:-0.49},
-    {symbol:'ARM', price:256.38, chg:-3.72}
+    {symbol:'ARM', price:256.38, chg:-3.72},
+    {symbol:'SNDK', price:1478.00, chg:-0.63}
   ];
   function renderUS(list){
     document.getElementById('us-body').innerHTML = list.map(function(c){
