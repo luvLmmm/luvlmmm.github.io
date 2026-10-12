@@ -151,19 +151,19 @@
   .w-kicker{font-family:var(--mono);font-size:12px;letter-spacing:.5em;text-indent:.5em;color:var(--muted);
     margin-bottom:28px}
   .w-title{font-weight:900;line-height:1.1;color:var(--ink)}
-  .w-title.t-vert{writing-mode:vertical-rl;font-size:clamp(64px,12vh,104px);letter-spacing:.28em}
-  .w-rule{width:min(420px,72vw);height:1px;margin:34px auto;
+  .w-title.t-vert{writing-mode:vertical-rl;font-size:clamp(56px,10vh,88px);letter-spacing:.28em}
+  .w-rule{width:min(420px,72vw);height:1px;margin:24px auto;
     background:linear-gradient(90deg,transparent,var(--ink),transparent)}
   .w-secs{font-size:13px;letter-spacing:.32em;text-indent:.32em;color:var(--sub);
-    margin-bottom:24px;line-height:2.2}
-  .w-stats{margin-bottom:42px;line-height:2.1}
+    margin-bottom:18px;line-height:2.2}
+  .w-stats{margin-bottom:28px;line-height:2}
   .w-stats-zh{font-size:13px;letter-spacing:.34em;text-indent:.34em;color:var(--ink)}
   .w-stats-en{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-indent:.3em;
     color:var(--muted)}
   .w-stats-zh+.w-stats-en{margin-top:8px}
   #enter-btn{background:transparent;color:var(--ink);border:1px solid var(--ink);
     cursor:pointer;font-family:var(--mono);font-size:13px;letter-spacing:.42em;font-weight:600;
-    padding:17px 36px 17px 52px;transition:all .25s}
+    padding:13px 36px 13px 52px;transition:all .25s}
   #enter-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
   .w-sched{display:flex;flex-direction:column;align-items:center;gap:6px;
     padding:0 28px 14px;font-family:var(--mono);font-size:10px;letter-spacing:.22em;
@@ -174,11 +174,13 @@
     padding:16px 28px;border-top:1px solid var(--line);
     font-family:var(--mono);font-size:11px;letter-spacing:.28em;color:var(--muted)}
   @media(max-height:720px){
-    .w-title.t-vert{font-size:clamp(48px,9vh,72px)}
-    .w-rule{margin:22px auto}
-    .w-kicker{margin-bottom:18px}
-    .w-secs{margin-bottom:14px}
-    .w-stats{margin-bottom:28px}
+    .w-title.t-vert{font-size:clamp(44px,8vh,64px)}
+    .w-rule{margin:16px auto}
+    .w-kicker{margin-bottom:12px}
+    .w-secs{margin-bottom:10px}
+    .w-stats{margin-bottom:18px}
+    .w-sched{gap:4px;padding-bottom:10px}
+    .w-bottom{padding:10px 28px}
   }
   @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
   .live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ink);margin-right:6px;
