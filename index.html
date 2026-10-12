@@ -514,8 +514,16 @@
     document.getElementById('w-date').textContent = dstr;
   }catch(e){}
 
+  // 从文章页返回（?enter=1）：跳过欢迎页，直接进正文
+  var skipWelcome = false;
+  try{ skipWelcome = /(?:\?|&)enter=1(?:&|$)/.test(location.search); }catch(e){}
+  if (skipWelcome){
+    var wz = document.getElementById('welcome');
+    if(wz){ wz.style.display='none'; }
+  }
+
   // 锁死首页滚动：欢迎页显示期间禁止 body 滚动（含 iOS 触摸）
-  document.body.classList.add('locked');
+  if(!skipWelcome){ document.body.classList.add('locked'); }
   var w0 = document.getElementById('welcome');
   if(w0){ w0.addEventListener('touchmove', function(e){ e.preventDefault(); }, {passive:false}); }
 
@@ -530,6 +538,16 @@
       window.scrollTo(0,0);
     }, 600);
   }); }
+
+  // 跳过欢迎页时：若带锚点则定位到对应版块
+  if (skipWelcome && location.hash){
+    setTimeout(function(){
+      try{
+        var t = document.querySelector(location.hash);
+        if(t){ t.scrollIntoView(); }
+      }catch(e){}
+    }, 60);
+  }
 
   var FALLBACK = [
     {symbol:'BTC', price:83500, chg:1.1},
