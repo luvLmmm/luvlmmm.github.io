@@ -1,71 +1,71 @@
 {
-  "updated_utc": "2026-10-13T17:15:48Z",
-  "updated_et": "美东 10-13 13:15",
+  "updated_utc": "2026-10-13T17:25:49Z",
+  "updated_et": "美东 10-13 13:25",
   "quotes": [
     {
       "symbol": "NVDA",
-      "price": 227.385,
-      "chg": 0.47
+      "price": 226.955,
+      "chg": 0.28
     },
     {
       "symbol": "AAPL",
-      "price": 343.46,
-      "chg": 0.73
+      "price": 343.49,
+      "chg": 0.74
     },
     {
       "symbol": "MSFT",
-      "price": 545.495,
-      "chg": 0.8
-    },
-    {
-      "symbol": "AVGO",
-      "price": 355.89,
-      "chg": 0.33
-    },
-    {
-      "symbol": "AMD",
-      "price": 597.1,
-      "chg": 0.48
-    },
-    {
-      "symbol": "TSM",
-      "price": 442.79,
-      "chg": -0.35
-    },
-    {
-      "symbol": "MU",
-      "price": 938.195,
-      "chg": -5.14
-    },
-    {
-      "symbol": "INTC",
-      "price": 102.29,
-      "chg": 0.93
-    },
-    {
-      "symbol": "META",
-      "price": 763.2653,
-      "chg": 2.73
-    },
-    {
-      "symbol": "GOOGL",
-      "price": 354.75,
-      "chg": 0.58
-    },
-    {
-      "symbol": "AMZN",
-      "price": 260.07,
-      "chg": 0.21
-    },
-    {
-      "symbol": "ARM",
-      "price": 257.34,
+      "price": 545.575,
       "chg": 0.82
     },
     {
+      "symbol": "AVGO",
+      "price": 355.565,
+      "chg": 0.24
+    },
+    {
+      "symbol": "AMD",
+      "price": 596.38,
+      "chg": 0.36
+    },
+    {
+      "symbol": "TSM",
+      "price": 442.4025,
+      "chg": -0.44
+    },
+    {
+      "symbol": "MU",
+      "price": 935.8,
+      "chg": -5.38
+    },
+    {
+      "symbol": "INTC",
+      "price": 101.955,
+      "chg": 0.6
+    },
+    {
+      "symbol": "META",
+      "price": 762.1,
+      "chg": 2.58
+    },
+    {
+      "symbol": "GOOGL",
+      "price": 355.2601,
+      "chg": 0.72
+    },
+    {
+      "symbol": "AMZN",
+      "price": 260.2,
+      "chg": 0.26
+    },
+    {
+      "symbol": "ARM",
+      "price": 250.32,
+      "chg": -1.93
+    },
+    {
       "symbol": "SNDK",
-      "price": 1454.365,
-      "chg": -2.22
+      "price": 1442.1,
+      "chg": -3.04
     }
   ]
 }
