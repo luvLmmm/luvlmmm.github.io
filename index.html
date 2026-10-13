@@ -472,6 +472,20 @@
     </div>
   </section>
 
+<!-- 常用市场行情 -->
+<div class="mkt fold closed" id="cmmarket">
+  <div class="wrap">
+    <div class="sec-head"><span class="no">CM</span><h2>常用市场快照</h2><span class="en">COMMON MARKETS · LIVE</span></div>
+    <div class="fold-body">
+    <table>
+      <thead><tr><th>品种</th><th>最新价</th><th>日涨跌</th></tr></thead>
+      <tbody id="cm-body"><tr><td colspan="3">正在拉取实时行情…</td></tr></tbody>
+    </table>
+    <div class="src">数据来源：Yahoo Finance 公开数据 · <span id="cm-time"></span></div>
+    </div>
+  </div>
+</div>
+
 <!-- 行情 -->
 <div class="mkt fold closed" id="market">
   <div class="wrap">
@@ -656,6 +670,37 @@
       });
   }
 
+  // ---- 常用市场快照（贵金属 + 原油 + 外汇） ----
+  var CM_NAMES = {XAU:'黄金', XAG:'白银', BRENT:'原油·布伦特', USDCNY:'美元/人民币'};
+  var CM_UNIT = {XAU:'$', XAG:'$', BRENT:'$', USDCNY:'¥'};
+  var CM_FALLBACK = [
+    {symbol:'XAU', price:4181.00, chg:-0.23},
+    {symbol:'XAG', price:59.50, chg:-1.68},
+    {symbol:'BRENT', price:105.65, chg:-0.94},
+    {symbol:'USDCNY', price:6.6808, chg:-0.03}
+  ];
+  function renderCM(list){
+    document.getElementById('cm-body').innerHTML = list.map(function(c){
+      return '<tr><td class="sym">'+(CM_NAMES[c.symbol]||c.symbol)+'</td><td>'+(CM_UNIT[c.symbol]||'$')+fmt(c.price)+
+        '</td><td class="'+cls(c.chg)+'">'+sign(c.chg)+'</td></tr>';
+    }).join('');
+  }
+  function refreshCM(){
+    fetch('common-quotes.json', {cache:'no-store'})
+      .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(d){
+        var q = d.quotes||[];
+        if(!q.length) throw 0;
+        renderCM(q);
+        stamp('cm-time', d.updated_et);
+        document.getElementById('cm-body').dataset.live='1';
+      })
+      .catch(function(){
+        var tb = document.getElementById('cm-body');
+        if(tb.dataset.live!=='1'){ renderCM(CM_FALLBACK); }
+      });
+  }
+
   // ---- 美股快照（科技 + 芯片） ----
   var US_NAMES = {NVDA:'英伟达',AAPL:'苹果',MSFT:'微软',AVGO:'博通',AMD:'超微',TSM:'台积电',
     MU:'美光',INTC:'英特尔',META:'Meta',GOOGL:'谷歌',AMZN:'亚马逊',ARM:'安谋',SNDK:'闪迪'};
@@ -761,7 +806,7 @@
   window.addEventListener('scroll', _ttVis, {passive:true});
   _ttVis();
   if (_tt) _tt.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
-  function refreshAll(){ refreshCrypto(); refreshUS(); }
+  function refreshAll(){ refreshCrypto(); refreshUS(); refreshCM(); }
   refreshAll();
   setInterval(refreshAll, 10000);
   // 从后台切回前台时立即刷新（浏览器会节流后台标签页的定时器）
