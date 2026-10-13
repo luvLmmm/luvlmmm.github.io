@@ -120,8 +120,12 @@
   .mkt.fold.closed .src{display:none}
   .mkt .sec-head h2{color:var(--ink)}
   .mkt table{width:100%;border-collapse:collapse;font-size:14px;table-layout:fixed}
-  #market th:nth-child(1){width:36%}#market th:nth-child(2){width:36%}#market th:nth-child(3){width:28%}
-  #usmarket th:nth-child(1){width:20%}#usmarket th:nth-child(2){width:30%}#usmarket th:nth-child(3){width:30%}#usmarket th:nth-child(4){width:20%}
+  #markets table.t3 th:nth-child(1){width:36%}#markets table.t3 th:nth-child(2){width:36%}#markets table.t3 th:nth-child(3){width:28%}
+  #markets table.t4 th:nth-child(1){width:20%}#markets table.t4 th:nth-child(2){width:30%}#markets table.t4 th:nth-child(3){width:30%}#markets table.t4 th:nth-child(4){width:20%}
+  .mkt .sub-head{font-family:var(--mono);font-size:11px;letter-spacing:.25em;color:var(--ink);font-weight:700;margin:24px 0 2px}
+  .mkt .sub-block:first-child .sub-head{margin-top:2px}
+  .mkt .sub-head .en{color:var(--muted);font-weight:600}
+  .mkt.fold.closed .sub-block ~ .sub-block{display:none}
   .mkt th{text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--muted);font-weight:600;
     padding:10px 8px;border-bottom:1px solid var(--ink)}
   .mkt td{padding:10px 8px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12.5px}
@@ -235,7 +239,7 @@
     </div>
     <nav class="secs">
       <a href="#world">国际</a><a href="#econ">经济</a><a href="#poli">政治</a>
-      <a href="#tech">科技</a><a href="#ai">AI产业</a><a href="#chips">芯片</a><a href="#stocks">美股</a><a href="#crypto">Web3</a>
+      <a href="#tech">科技</a><a href="#ai">AI产业</a><a href="#chips">芯片</a><a href="#stocks">美股</a><a href="#crypto">Web3</a><a href="#markets">市场快照</a>
     </nav>
   </header>
 
@@ -472,44 +476,35 @@
     </div>
   </section>
 
-<!-- 常用市场行情 -->
-<div class="mkt fold closed" id="cmmarket">
+<!-- 市场快照 -->
+<div class="mkt fold closed" id="markets">
   <div class="wrap">
-    <div class="sec-head"><span class="no">CM</span><h2>常用市场快照</h2><span class="en">COMMON MARKETS · LIVE</span></div>
+    <div class="sec-head"><span class="no">MKT</span><h2>市场快照</h2><span class="en">MARKET SNAPSHOT · LIVE</span></div>
     <div class="fold-body">
-    <table>
+    <div class="sub-block">
+    <div class="sub-head">常用市场 <span class="en">COMMON</span></div>
+    <table class="t3">
       <thead><tr><th>品种</th><th>最新价</th><th>日涨跌</th></tr></thead>
       <tbody id="cm-body"><tr><td colspan="3">正在拉取实时行情…</td></tr></tbody>
     </table>
     <div class="src">数据来源：Yahoo Finance 公开数据 · <span id="cm-time"></span></div>
     </div>
-  </div>
-</div>
-
-<!-- 行情 -->
-<div class="mkt fold closed" id="market">
-  <div class="wrap">
-    <div class="sec-head"><span class="no">MKT</span><h2>加密市场快照</h2><span class="en">CRYPTO MARKET · LIVE</span></div>
-    <div class="fold-body">
-    <table>
+    <div class="sub-block">
+    <div class="sub-head">加密市场 <span class="en">CRYPTO</span></div>
+    <table class="t3">
       <thead><tr><th>资产</th><th>价格 (USD)</th><th>日涨跌</th></tr></thead>
       <tbody id="mkt-body"><tr><td colspan="3">正在拉取实时行情…</td></tr></tbody>
     </table>
     <div class="src">数据来源：Coinbase 公开数据（实时） · <span id="mkt-time"></span></div>
     </div>
-  </div>
-</div>
-
-<!-- 美股行情 -->
-<div class="mkt fold closed" id="usmarket">
-  <div class="wrap">
-    <div class="sec-head"><span class="no">US</span><h2>美股市场快照</h2><span class="en">US STOCK MARKET · LIVE</span></div>
-    <div class="fold-body">
-    <table>
+    <div class="sub-block">
+    <div class="sub-head">美股市场 <span class="en">US STOCKS</span></div>
+    <table class="t4">
       <thead><tr><th>代码</th><th>公司</th><th>价格 (USD)</th><th>日涨跌</th></tr></thead>
       <tbody id="us-body"><tr><td colspan="4">正在拉取实时行情…</td></tr></tbody>
     </table>
     <div class="src">数据来源：Nasdaq 公开数据 · <span id="us-time"></span></div>
+    </div>
     </div>
   </div>
 </div>
@@ -759,8 +754,12 @@
     });
   }
   function peekH(m){
-    var t = m.querySelector('table'), h = 0;
-    if (!t) return 0;
+    var h = 0;
+    var scope = m.querySelector('.sub-block') || m;
+    var sh = scope.querySelector('.sub-head');
+    if (sh) h += sh.offsetHeight + 4;
+    var t = scope.querySelector('table');
+    if (!t) return h;
     var thead = t.querySelector('thead');
     if (thead) h += thead.offsetHeight;
     var rows = t.querySelectorAll('tbody tr');
