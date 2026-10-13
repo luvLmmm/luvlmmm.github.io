@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>头版</title>
-<meta name="robots" content="noindex, nofollow">
+<meta content="noindex, nofollow" name="robots"/>
 <style>
   :root{
     --bg:#f6f6f4; --panel:#ffffff; --paper:#f6f6f4; --card:#ffffff;
@@ -68,6 +69,8 @@
     color:var(--sub);border:1px solid var(--line);padding:4px 10px;margin-bottom:14px}
   .hero-main h2{font-size:clamp(28px,4.2vw,44px);line-height:1.4;font-weight:900;margin-bottom:14px}
   .hero-main h2 a:hover{text-decoration:underline;text-underline-offset:6px}
+  h2 .go,h3 .go{font-family:var(--mono);font-weight:400;color:var(--muted);margin-right:.35em}
+  h2 a:hover .go,h3 a:hover .go{color:var(--ink)}
   .dek{color:var(--sub);font-size:15.5px;line-height:1.9}
   .meta{margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.06em}
   .meta a{border-bottom:1px dotted var(--muted)}
@@ -203,322 +206,307 @@
 </head>
 <body>
 <div class="topline"></div>
-
 <!-- HOMEPAGE -->
 <div id="welcome">
-  <div class="w-folio"><span id="w-date">2026年10月13日</span><span><span class="live-dot"></span>LIVE</span></div>
-  <div class="w-stage">
-    <div class="w-box">
-      <div class="w-kicker">THE FRONT PAGE<span class="caret">_</span></div>
-      <div class="w-title t-vert">头版</div>
-      <div class="w-rule"></div>
-      <div class="w-secs">为你筛选值得读的新闻<br>每天一页读完</div>
-      <div class="w-stats">
-        <div class="w-stats-zh">8 个版面 · 24 篇报道</div>
-        <div class="w-stats-zh">实时数据 · 每日更新</div>
-        <div class="w-stats-en">8 SECTIONS · 24 STORIES</div>
-        <div class="w-stats-en">LIVE DATA · DAILY UPDATE</div>
-      </div>
-      <button id="enter-btn">进入阅读 →</button>
-    </div>
-  </div>
-  <div class="w-sched"><span>本期 <span id="w-ed">10-13</span> 已更新</span><span class="en">EDITION <span id="w-ed-en">10-13</span> READY</span><span class="tm">更新于 <span id="w-ed-time">06:00</span></span><span class="en tm">UPDATED <span id="w-ed-time-en">06:00</span></span></div>
-  <div class="w-bottom"><span>EST. 2026</span></div>
+<div class="w-folio"><span id="w-date">2026年10月13日</span><span><span class="live-dot"></span>LIVE</span></div>
+<div class="w-stage">
+<div class="w-box">
+<div class="w-kicker">THE FRONT PAGE<span class="caret">_</span></div>
+<div class="w-title t-vert">头版</div>
+<div class="w-rule"></div>
+<div class="w-secs">为你筛选值得读的新闻<br/>每天一页读完</div>
+<div class="w-stats">
+<div class="w-stats-zh">8 个版面 · 24 篇报道</div>
+<div class="w-stats-zh">实时数据 · 每日更新</div>
+<div class="w-stats-en">8 SECTIONS · 24 STORIES</div>
+<div class="w-stats-en">LIVE DATA · DAILY UPDATE</div>
 </div>
-
+<button id="enter-btn">进入阅读 →</button>
+</div>
+</div>
+<div class="w-sched"><span>本期 <span id="w-ed">10-14</span> 已更新</span><span class="en">EDITION <span id="w-ed-en">10-14</span> READY</span><span class="tm">更新于 <span id="w-ed-time">00:00</span></span><span class="en tm">UPDATED <span id="w-ed-time-en">00:00</span></span></div>
+<div class="w-bottom"><span>EST. 2026</span></div>
+</div>
 <div class="ticker" title="行情滚动（Coinbase 公开数据，实时）">
-  <span class="tk-label">LIVE</span>
-  <div class="ticker-view"><div class="ticker-inner" id="ticker">正在加载行情…</div></div>
+<span class="tk-label">LIVE</span>
+<div class="ticker-view"><div class="ticker-inner" id="ticker">正在加载行情…</div></div>
 </div>
-
 <div class="wrap">
-  <header class="mast">
-    <div class="kicker">THE FRONT PAGE</div>
-    <h1>头<span class="acc">版</span></h1>
-    <div class="dateline">
-      <span id="dateline-date">2026年10月13日 星期二</span>
-      <span><span class="live-dot"></span>行情实时更新</span>
-    </div>
-    <nav class="secs">
-      <a href="#world">国际</a><a href="#econ">经济</a><a href="#poli">政治</a>
-      <a href="#tech">科技</a><a href="#ai">AI产业</a><a href="#chips">芯片</a><a href="#stocks">美股</a><a href="#crypto">Web3</a><a href="#markets">市场快照</a>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-main">
-      <span class="tag">头条 · TOP STORY</span>
-      <figure class="ph ph-hero"><img src="https://www.alyemenione.com/wp-content/uploads/2022/03/%D8%A3%D8%B1%D8%A7%D9%85%D9%83%D9%88.jpg" alt="胡塞武装此前袭击沙特能源设施后燃起的大火（资料图）" loading="eager" referrerpolicy="no-referrer" onerror="this.closest('figure').remove()"></figure>
-      <h2 class="serif"><a href="articles/2026-10-13/houthi-riyadh-airport-strikes-escalate.html">胡塞再袭沙特机场与油气设施，利雅得机场停运至10月17日</a></h2>
-      <p class="dek">也门胡塞武装12日向沙特发动新一轮导弹与无人机袭击，目标包括王国关键油气设施，利雅得哈立德国王国际机场停运延长至10月17日，全国机场航班取消率已达46%。上周六（10月10日）的袭击造成14人死亡、300多人受伤，是沙特十年来最致命的袭击，胡塞方面已宣称对多起袭击负责，并警告各航空公司沙特领空已成为其“军事行动战区”。沙特能源大臣誓言严厉报复，美国联邦航空管理局已警告美航司避开部分沙特空域。</p>
-      <div class="meta">New York Post · 2026-10-12 · <a href="https://nypost.com/2026/10/12/world-news/saudi-arabia-faces-new-missile-drone-strikes-after-houthi-airport-attacks/" target="_blank" rel="noopener">阅读原文 ↗</a></div>
-    </div>
-    <div class="hero-side">
-      <div class="mini">
-        <span class="tag">次条</span>
-        <h3 class="serif"><a href="articles/2026-10-13/north-korea-ballistic-missiles-oct12.html">朝鲜发射多枚弹道导弹回应韩方高超音速试射</a></h3>
-        <p>朝鲜12日上午9点20分左右从平壤附近向东部海域发射多枚不同型号弹道导弹，其中一种飞行距离超过900公里。这是平壤本月第4次试射，韩国联参本部称其为对韩方上周首次公开高超音速导弹试射的“武力示威”。韩国国家安保室召开紧急会议，谴责此次发射违反联合国安理会决议。</p>
-        <div class="meta">Reuters / GMA News · 2026-10-12</div>
-      </div>
-      <div class="mini">
-        <span class="tag">次条</span>
-        <h3 class="serif"><a href="articles/2026-10-13/un-poverty-index-rise-since-2010.html">联合国：全球贫困16年来首次上升，12亿人陷赤贫</a></h3>
-        <p>联合国开发计划署12日发布的2026年度报告显示，全球多维贫困指数自2010年创设以来首次上升，陷入“急剧贫困”的人口达12亿，一年内增加了5150万人，其中一半以上是儿童。署长亚历山大·德克罗称这是“给世界的警钟”，但指出人口增长是重要推手，且108个发展中国家中只有13个有新数据。报告也呈现两面：约33个国家在15年内贫困率减半，其中进展最快的多在亚洲，包括中国和越南。</p>
-        <div class="meta">AFP / IOL · 2026-10-12</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 国际 -->
-  <section class="blk" id="world">
-    <div class="sec-head"><span class="no">01</span><h2>国际</h2><span class="en">WORLD</span></div>
-    <div class="grid">
-      <div class="card">
-        <span class="tag">加沙</span>
-      <figure class="ph"><img src="https://images.odt.co.nz/view/acePublic/alias/contentid/1scs899j1zxjk4evz6t/1/houses-and-buildings-destroyed-by-israeli-strikes-in-gaza-city-photo-reuters.jpeg?f=3%3A2" alt="加沙城遭以军空袭后被毁的住宅建筑（路透社资料图）" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('figure').remove()"></figure>
-        <h3 class="serif"><a href="articles/2026-10-13/gaza-ceasefire-one-year-unmet-promises.html">加沙停火一周年：承诺大多落空，以军仍控制加沙七成地区</a></h3>
-        <p>加沙停火协议签署一周年之际，协议的长期承诺大多未能兑现。停火后以军近乎每天空袭加沙，加沙卫生部门称已造成约1450名巴勒斯坦人死亡；以方本应只保留加沙53%地区的控制权，如今实际控制约70%。停火时哈马斯释放了20名以方活着的人质，此后加沙方向未再向以色列发射火箭弹。但内塔尼亚胡12日宣称“军事行动尚未结束”，并称已击毙4000名参与“10·7”袭击的哈马斯人员。</p>
-        <div class="meta">AFP / Malay Mail · 10-10 · <a href="https://www.malaymail.com/news/world/2026/10/10/newsworld20261010hostages-freed-but-gaza-ceasefires-biggest-promises-remain-unmet238552/238552" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">诺贝尔奖</span>
-        <h3 class="serif"><a href="articles/2026-10-13/navi-pillay-nobel-peace-prize-2026.html">诺贝尔和平奖授予南非法学家纳维·皮莱</a></h3>
-        <p>挪威诺贝尔委员会9日宣布，将2026年诺贝尔和平奖授予南非法学家纳维·皮莱，表彰她“为促进和平与国际法所作的努力”。85岁的皮莱曾任卢旺达种族灭绝法庭庭长、联合国人权事务高级专员（2008-2014），去年主持的联合国独立调查委员会指控以色列在加沙实施种族灭绝。委员会称，在“国际法体系承受巨大压力、法官被制裁、机构被攻击”的时刻颁此奖意在重申法治。得奖同日，美国政府宣布对国际刑事法院实施制裁，遭法院谴责为“对法治的攻击”。</p>
-        <div class="meta">USA Today · 10-09 · <a href="https://www.usatoday.com/story/news/politics/2026/10/09/nobel-peace-prize-navanethem-navi-pillay/92166541007/" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">伊朗</span>
-        <h3 class="serif"><a href="articles/2026-10-13/iran-hormuz-supertanker-struck.html">伊朗革命卫队称在霍尔木兹海峡击中一艘超级油轮</a></h3>
-        <p>伊朗伊斯兰革命卫队12日称，其海军在霍尔木兹海峡击中一艘试图关闭应答器、“无视警告”闯关的超级油轮，船只起火。自2月28日美以打击伊朗爆发西岸战争以来，伊朗持续封锁这条承担全球约五分之一石油和液化天然气贸易的水道，并频繁打击未经其许可通航的船只。伊朗海军司令上周末警告，任何关闭应答器穿越海峡的船只将被视为“敌对”并面临“严厉”回应。伊朗外长同日表示，德黑兰仍在评估美方对重启霍尔木兹海峡提案的回复。</p>
-        <div class="meta">The Hindu · 10-12 · <a href="https://www.thehindu.com/news/international/iran-guards-say-struck-vessel-in-strait-of-hormuz/article71576235.ece" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-    </div>
-  </section>
-
+<header class="mast">
+<div class="kicker">THE FRONT PAGE</div>
+<h1>头<span class="acc">版</span></h1>
+<div class="dateline">
+<span id="dateline-date">2026年10月13日 星期二</span>
+<span><span class="live-dot"></span>行情实时更新</span>
+</div>
+<nav class="secs">
+<a href="#world">国际</a><a href="#econ">经济</a><a href="#poli">政治</a>
+<a href="#tech">科技</a><a href="#ai">AI产业</a><a href="#chips">芯片</a><a href="#stocks">美股</a><a href="#crypto">WEB3</a><a href="#markets">市场快照</a>
+</nav>
+</header>
+<!-- HERO -->
+<div class="hero">
+<div class="hero-main">
+<span class="tag">头条 · TOP STORY</span>
+<figure class="ph ph-hero"><img alt="黑海商船一夜两遭无人机袭击，一艘沉没11人失踪，保加利亚召见俄大使" loading="eager" onerror="this.closest('figure').remove()" src="img/2026-10-14/black-sea-ships-drone-attack.webp"/></figure>
+<h2 class="serif"><a href="articles/2026-10-14/black-sea-ships-drone-attack.html"><span class="go">→</span>黑海商船一夜两遭无人机袭击，一艘沉没11人失踪，保加利亚召见俄大使</a></h2>
+<p class="dek">保加利亚黑海沿岸13日凌晨发生两起商船无人机袭击事件：几内亚比绍籍货轮"HS Dignity"号沉没，16名船员中11人失踪；乌克兰船东的"Chelsea 3"号被三架无人机击中，15名船员全部获救。保加利亚总理拉德夫已召见俄罗斯大使，并与北约秘书长吕特通话，北约成员国水域遇袭让黑海成为俄乌战争新的升级前线。</p>
+<div class="meta">CNN · 2026-10-13 · <a href="https://www.cnn.com/2026/10/13/world/several-sailors-missing-after-drone-strike-sinks-merchant-vessel-near-bulgarian-waters?cid=external-feeds_iluminar_meta" rel="noopener" target="_blank">阅读原文 ↗</a></div>
+</div>
+<div class="hero-side">
+<div class="mini">
+<span class="tag">次条</span>
+<h3 class="serif"><a href="articles/2026-10-14/trump-iran-war-very-soon.html"><span class="go">→</span>特朗普称对伊朗战争"很快结束"，油价将"像石头一样下跌"</a></h3>
+<p>美国总统特朗普12日在白宫对记者表示，即将到来的中期选举不会改变美国对伊朗政策，战争将"很快"结束，届时油价将"像石头一样下跌"。与此同时，伊朗正通过卡塔尔、巴基斯坦等中间人评估美方关于重开霍尔木兹海峡的最新提案。</p>
+<div class="meta">印度快报 · 2026-10-13</div>
+</div>
+<div class="mini">
+<span class="tag">次条</span>
+<h3 class="serif"><a href="articles/2026-10-14/djibouti-migrant-boat-disaster.html"><span class="go">→</span>吉布提移民船倾覆：139人死亡、84人失踪，多为埃塞俄比亚人</a></h3>
+<p>联合国移民署11日通报，一艘载有305名移民的船只10月8日至9日夜间在吉布提奥博克以北海域倾覆，139人死亡、84人失踪，82人获救，遇难者中包括15名儿童。这是"东部移民路线"上有记录以来最致命的海难之一。</p>
+<div class="meta">阿联酋国家报 · 2026-10-12</div>
+</div>
+</div>
+</div>
+<!-- 国际 -->
+<section class="blk" id="world">
+<div class="sec-head"><span class="no">01</span><h2>国际</h2><span class="en">WORLD</span></div>
+<div class="grid">
+<div class="card">
+<span class="tag">加沙峰会</span>
+<figure class="ph"><img alt='加沙和平峰会一周年：美国称去军事化取得"切实进展"，重建"任重道远"' loading="lazy" onerror="this.closest('figure').remove()" src="img/2026-10-14/gaza-peace-summit-one-year.webp"/></figure>
+<h3 class="serif"><a href="articles/2026-10-14/gaza-peace-summit-one-year.html"><span class="go">→</span>加沙和平峰会一周年：美国称去军事化取得"切实进展"，重建"任重道远"</a></h3>
+<p>在加沙战争停火协议达成一周年之际，美国国务院13日发表声明，称加沙地带的去军事化进程正在取得"切实进展"。声明列举了停火维持、全部人质获释、和平委员会成立等一系列成果，同时也承认加沙重建将是一个"漫长而艰巨"的多年工程。</p>
+<div class="meta">以色列时报 · 10-13 · <a href="https://www.timesofisrael.com/liveblog_entry/real-progress-made-in-demilitarizing-gaza-but-rebuild-will-be-difficult-us-state-department/" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+<div class="card">
+<span class="tag">奥马尔</span>
+<h3 class="serif"><a href="articles/2026-10-14/ilhan-omar-home-raided.html"><span class="go">→</span>联邦探员凌晨突袭搜查众议员奥马尔住宅，司法部证实属刑事调查</a></h3>
+<p>美国国土安全部调查局探员12日凌晨突袭搜查了民主党众议员伊尔汗·奥马尔位于华盛顿地区的住宅。美国司法部证实，探员执行了一份"经司法授权的搜查令"，这是"一项正在进行的联邦刑事调查"的一部分。奥马尔谴责这是针对政治对手的"政治恐吓"，特朗普则否认与搜查有关。</p>
+<div class="meta">美国《今日美国》 · 10-12 · <a href="https://www.usatoday.com/story/news/politics/2026/10/12/ilhan-omar-home-raid-homeland-security/92214906007/" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+<div class="card">
+<span class="tag">俄亥俄</span>
+<h3 class="serif"><a href="articles/2026-10-14/trump-ohio-rally-immigration.html"><span class="go">→</span>特朗普俄亥俄集会主打移民牌，为参议员哈斯特德连任站台</a></h3>
+<p>美国总统特朗普12日晚在俄亥俄州扬斯敦举行集会，为共和党参议员乔恩·哈斯特德的连任选战造势。集会上他把主要火力对准索马里与海地移民，重申其强硬的移民政策立场，同时宣布将在附近的克利夫兰新建一座潜艇部件制造中心。</p>
+<div class="meta">美联社 · 10-13 · <a href="https://www.arabnews.com/world/trump-attacks-immigrants-from-somalia-and-haiti-while-rallying-in-ohio-for-republican-candidates-3006025" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+</div>
+</section>
 <!-- 经济 -->
-  <section class="blk" id="econ">
-    <div class="sec-head"><span class="no">02</span><h2>经济</h2><span class="en">ECONOMY</span></div>
-    <div class="grid">
-      <div class="card">
-        <span class="tag">IMF</span>
-      <figure class="ph"><img src="https://media.nationthailand.com/uploads/images/md/2026/03/GMKwAwVQzEyZhiifyDjq.webp" alt="IMF 与世行曼谷年会" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('figure').remove()"></figure>
-        <h3 class="serif"><a href="articles/2026-10-13/imf-winter-coming-bangkok-annual-meetings.html">IMF与世行曼谷年会开幕，格奥尔基耶娃警告“冬天来了”</a></h3>
-        <p>国际货币基金组织与世界银行秋季年会在曼谷拉开帷幕。IMF总裁格奥尔基耶娃警告全球经济困难可能正在逼近：“冬天来了”。10月版《世界经济展望》维持2026年全球增长约3%的预测基本不变，2027年或小幅上调；但乌克兰和部分受地缘冲突影响的海湾国家可能被下调。IMF在10月6日发布的研究还指出，食品与能源价格的急剧上涨正成为引发经济危机更频繁的触发因素，可能抬高通胀预期并加深贫困。</p>
-        <div class="meta">Nation Thailand · 10-12 · <a href="https://www.nationthailand.com/business/economy/40072127" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">贸易战</span>
-        <h3 class="serif"><a href="articles/2026-10-13/us-china-rare-earth-truce-extended-january.html">中美稀土休战延至明年1月：脆弱的两个月</a></h3>
-        <p>美国财长贝森特9月23日宣布，将美中贸易休战从原定的11月10日延长两个月至2027年1月10日。核心交易维持不变：中国暂停执行稀土及相关物项的出口管制，美国不再进一步加征关税，对华综合税率维持在釜山协议达成的约47%。中国握有关键筹码：占全球稀土开采量的60%—70%、加工量的85%—90%，镝、铽等重稀土加工几乎全在中国。双方都抱怨对方履约不力，但都不希望在11月深圳、12月迈阿密两次元首会晤前让休战破裂。</p>
-        <div class="meta">Free Malaysia Today · 10-12 · <a href="https://www.freemalaysiatoday.com/category/opinion/2026/10/12/why-the-us-china-trade-truce-matters" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">诺贝尔奖</span>
-        <h3 class="serif"><a href="articles/2026-10-13/nobel-economics-hall-woodford-2026.html">诺贝尔经济学奖授予霍尔与伍德福德：稳定宏观经济的理论基石</a></h3>
-        <p>瑞典皇家科学院12日宣布，将2026年诺贝尔经济学奖授予斯坦福大学的罗伯特·霍尔与哥伦比亚大学的迈克尔·伍德福德，表彰他们对“宏观经济稳定的微观经济基础”的研究，为央行与政府使用的宏观经济模型奠定了坚实理论基础。霍尔阐明了劳动力市场中求职与工资设定如何影响失业与经济周期；伍德福德系统解释了利率与市场预期如何影响价格，为央行通过信号引导预期、管理通胀提供了理论依据。奖金为1200万瑞典克朗，约120万美元。</p>
-        <div class="meta">The Hindu · 10-12 · <a href="https://www.thehindu.com/business/Economy/nobel-prize-in-economics-2026-announced-robert-e-hall-michael-woodford/article71573945.ece" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-    </div>
-  </section>
-
+<section class="blk" id="econ">
+<div class="sec-head"><span class="no">02</span><h2>经济</h2><span class="en">ECONOMY</span></div>
+<div class="grid">
+<div class="card">
+<span class="tag">美国CPI</span>
+<figure class="ph"><img alt="美国9月CPI今晚公布：预计升至3.7%，能源价格是最大推手" loading="lazy" onerror="this.closest('figure').remove()" src="img/2026-10-14/us-september-cpi-preview.webp"/></figure>
+<h3 class="serif"><a href="articles/2026-10-14/us-september-cpi-preview.html"><span class="go">→</span>美国9月CPI今晚公布：预计升至3.7%，能源价格是最大推手</a></h3>
+<p>美国劳工统计局将于北京时间今晚8点半公布9月消费者价格指数（CPI）。市场普遍预计整体通胀率将从8月的3.4%升至3.7%，主要推手是能源价格上涨。这份报告是美联储10月底议息会议前最关键的数据，将左右市场对年底前是否再次加息的判断。</p>
+<div class="meta">IND Money · 10-13 · <a href="https://www.indmoney.com/blog/us-stocks/us-september-cpi-inflation-forecast-fed-rate-cuts" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+<div class="card">
+<span class="tag">银行财报</span>
+<h3 class="serif"><a href="articles/2026-10-14/us-banks-q3-earnings.html"><span class="go">→</span>美国大行三季度财报分化：摩根大通罕见"失手"，高盛净营收超预期近20亿美元</a></h3>
+<p>美国银行业三季度财报季13日拉开帷幕，四大银行交出了一份喜忧参半的成绩单：摩根大通罕见地同时错失营收与盈利预期，高盛则凭借股票交易业务的爆发交出远超预期的答卷，花旗同样超预期，富国银行喜忧参半。美国银行与摩根士丹利将于14日公布业绩。</p>
+<div class="meta">纽约邮报 · 10-13 · <a href="https://nypost.com/2026/10/13/business/jpmorgan-records-rare-earnings-miss-goldman-sachs-delivers-blowout-revenue/" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+<div class="card">
+<span class="tag">中国数据</span>
+<h3 class="serif"><a href="articles/2026-10-14/china-september-cpi-trade-data.html"><span class="go">→</span>中国9月CPI、PPI与贸易数据今日密集公布，出口增速成焦点</a></h3>
+<p>中国国家统计局将于今日上午9点半公布9月CPI与PPI数据，中午海关总署将公布9月进出口数据。市场预计CPI同比从8月的0.8%升至1%左右，PPI同比进一步走高至4%以上，出口则有望延续约25%的强劲增速。在美国对中国建造船舶加征港口费生效的背景下，这份贸易数据备受关注。</p>
+<div class="meta">BigGo 财经 · 10-12 · <a href="https://finance.biggo.com/news/e4a50502-6c7b-4295-a1ad-2abecd529154" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+</div>
+</section>
 <!-- 政治 -->
-  <section class="blk" id="poli">
-    <div class="sec-head"><span class="no">03</span><h2>政治</h2><span class="en">POLITICS</span></div>
-    <div class="grid">
-      <div class="card">
-        <span class="tag">法国大选</span>
-      <figure class="ph"><img src="https://media.guim.co.uk/f28a6a26ff8c5bf0cb5f3a1d4bbc9842a226e7f0/0_545_8169_4901/1000.jpg" alt="法国极右翼领袖勒庞在竞选集会上的资料照片" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('figure').remove()"></figure>
-        <h3 class="serif"><a href="articles/2026-10-13/france-le-pen-melenchon-runoff-poll.html">法国大选变天：勒庞与梅朗雄或决赛相见，两极对峙民调实锤</a></h3>
-        <p>随着马克龙第二个五年任期接近尾声，民调机构 Toluna Harris Interactive 10 月 12 日公布的调查显示，极右翼领袖玛丽娜·勒庞和极左翼领袖让-吕克·梅朗雄在所有测试场景下都将双双进入第二轮。勒庞首轮支持率 35% 至 37%，较上月进一步拉大领先；梅朗雄则实现突破，首次在全部五种对阵组合中跻身决赛圈。民调还显示勒庞在第二轮中将轻松击败梅朗雄，凸显法国政坛中间地带被掏空、左右两极对峙的格局。</p>
-        <div class="meta">路透社 · 10-12 · <a href="https://www.reuters.com/world/le-pen-melenchon-head-run-off-frances-political-divide-deepens-poll-shows-2026-10-12/" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">美国中期选举</span>
-        <h3 class="serif"><a href="articles/2026-10-13/musk-366m-republican-donations.html">马斯克狂砸 3.66 亿美元成中期选举最大金主，押注共和党保国会</a></h3>
-        <p>埃隆·马斯克已成为 2026 年美国中期选举已知最大金主。路透社 10 月 12 日报道，马斯克本轮选举周期已累计砸下约 3.66 亿美元，仅 7 月以来就捐出 2.76 亿美元，其中 1.58 亿美元流向参议院领袖基金，7600 万美元给了自己的 America PAC。民主党喊话要调查马斯克旗下的 SpaceX 政府合同和他在「政府效率部」的任职，他则押注共和党保住国会两院。</p>
-        <div class="meta">路透社 · 10-12 · <a href="https://www.reuters.com/business/media-telecom/musk-has-spent-366-million-help-republicans-retain-control-congress-2026-10-12/" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">以色列大选</span>
-        <h3 class="serif"><a href="articles/2026-10-13/israel-oct27-election-netanyahu-legacy.html">以色列 10 月 27 日大选：内塔尼亚胡押上政治遗产，恐再陷组阁僵局</a></h3>
-        <p>以色列将于 10 月 27 日举行全国大选，这是自 2023 年 10 月 7 日哈马斯袭击以来的首次投票。在位累计近二十年的内塔尼亚胡再次领衔参选，但「十月七日」安保失职的问责阴影挥之不去；他希望以对伊朗代理人网络的军事成果作为政治遗产收官。民调显示左右两大阵营均难获过半席位，大概率陷入组阁僵局——内塔尼亚胡届时将以看守总理身份留任。</p>
-        <div class="meta">福克斯新闻 · 10-12 · <a href="https://foxnews.com/world/benjamin-netanyahu-legacy-political-future-line-israel-oct-27-election" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-    </div>
-  </section>
-
+<section class="blk" id="poli">
+<div class="sec-head"><span class="no">03</span><h2>政治</h2><span class="en">POLITICS</span></div>
+<div class="grid">
+<div class="card">
+<span class="tag">胡塞袭击</span>
+<figure class="ph"><img alt="胡塞新一波导弹无人机袭击沙特，利雅得机场停运延至10月17日" loading="lazy" onerror="this.closest('figure').remove()" src="img/2026-10-14/houthi-saudi-escalation.webp"/></figure>
+<h3 class="serif"><a href="articles/2026-10-14/houthi-saudi-escalation.html"><span class="go">→</span>胡塞新一波导弹无人机袭击沙特，利雅得机场停运延至10月17日</a></h3>
+<p>也门胡塞武装12日向沙特发动新一轮导弹与无人机袭击，目标包括沙特关键油气设施。沙特当局将利雅得哈立德国王国际机场的运营暂停延长至10月17日，这座机场在周末的袭击中已造成14人死亡、300多人受伤。</p>
+<div class="meta">纽约邮报 · 10-12 · <a href="https://nypost.com/2026/10/12/world-news/saudi-arabia-faces-new-missile-drone-strikes-after-houthi-airport-attacks/" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+<div class="card">
+<span class="tag">诺贝尔奖</span>
+<h3 class="serif"><a href="articles/2026-10-14/nobel-economics-2026.html"><span class="go">→</span>2026年诺贝尔经济学奖授予霍尔与伍德福德，表彰平抑经济波动研究</a></h3>
+<p>瑞典皇家科学院12日宣布，将2026年诺贝尔经济学奖授予美国经济学家罗伯特·霍尔（斯坦福大学）与迈克尔·伍德福德（哥伦比亚大学），表彰他们在"宏观经济稳定的微观基础"方面的开创性工作。奖金为1200万瑞典克朗（约120万美元），这是今年最后一个公布的诺贝尔奖项。</p>
+<div class="meta">路透社 · 10-12 · <a href="https://www.reuters.com/world/hall-woodford-win-2026-nobel-economics-prize-2026-10-12/" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+<div class="card">
+<span class="tag">亚信峰会</span>
+<h3 class="serif"><a href="articles/2026-10-14/wang-yi-cica-four-countries.html"><span class="go">→</span>王毅将出席亚信峰会，并访问阿塞拜疆等四国</a></h3>
+<p>中国外交部发言人12日宣布，中共中央政治局委员、外交部长王毅将于10月15日以中国国家主席特别代表身份，出席在阿塞拜疆首都巴库举行的第七届亚洲相互协作与信任措施会议（亚信）峰会。王毅还将于10月14日至20日访问阿塞拜疆、克罗地亚、黑山和保加利亚四国。</p>
+<div class="meta">中国环球电视网 · 10-12 · <a href="https://news.cgtn.com/news/2026-10-12/China-s-top-diplomat-to-attend-CICA-summit-visit-four-countries-1RbxFvQ0Zc4/p.html" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+</div>
+</section>
 <!-- 科技 -->
-  <section class="blk" id="tech">
-    <div class="sec-head"><span class="no">04</span><h2>科技</h2><span class="en">TECH</span></div>
-    <div class="grid">
-      <div class="card">
-        <span class="tag">苹果发布会</span>
-      <figure class="ph"><img src="https://www.allround-pc.com/wp-content/uploads/2024/11/apple-homepod-3-display-scaled.jpg" alt="带屏幕的苹果智能家居中枢 HomeView 概念渲染图" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('figure').remove()"></figure>
-        <h3 class="serif"><a href="articles/2026-10-13/apple-homeview-smart-hub-leak.html">发布会前夜全泄底：苹果智能家居中枢叫 HomeView，11 月开卖</a></h3>
-        <p>苹果「Welcome Home」发布会开幕前夜，智能家居中枢几乎被爆了个底朝天。据彭博社 Mark Gurman 在 10 月 12 日刊出的 Power On 通讯，新品定名「HomeView」而非传闻的 HomePad，主打 Siri 语音操控、触屏为辅，搭载 A18 芯片，分为金属音箱底座的桌面版和壁挂版，没有独立 App Store。设备预计 11 月中旬发售，同场还有新款 Apple TV 4K 和 HomePod mini。</p>
-        <div class="meta">Macworld · 10-12 · <a href="https://www.macworld.com/article/3258488/last-minute-leak-reveals-key-details-about-apples-homeview-hub.html" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">AI 产业</span>
-        <h3 class="serif"><a href="articles/2026-10-13/broadcom-ceo-capital-ai-growth.html">博通 CEO：AI 增长最大障碍不是芯片，是钱</a></h3>
-        <p>博通 CEO 陈福阳 10 月 12 日在新加坡一场论坛上表示，晶圆和内存短缺正在缓解，AI 产业增长的最大瓶颈已从硬件变成资本。他同时提到，Anthropic 和 OpenAI 的最新模型已为 AI 助手业务带来了可观收入，说明前沿大模型正在兑现商业化。这番表态等于给「AI 烧钱无底洞」的担忧泼了半盆冷水：缺的不是技术，是钱。</p>
-        <div class="meta">路透社 · 10-12 · <a href="https://www.reuters.com/world/asia-pacific/broadcom-ceo-says-biggest-hurdle-ai-fuelled-tech-growth-is-capital-not-memory-2026-10-12/" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">光纤网络</span>
-        <h3 class="serif"><a href="articles/2026-10-13/nokia-multi-pon-50g-fiber.html">诺基亚发布 50G 光纤线卡：单端口通吃四代 PON，为 AI 时代铺网</a></h3>
-        <p>诺基亚 10 月 12 日发布业界首款多制式光纤线卡，单端口同时支持 GPON、10G、25G 和 50G PON，运营商无需更换硬件即可按需升级速率。该线卡基于诺基亚自研 Quillion 芯片，最高可提供 50Gbps 接入速率，预计 2027 年量产。诺基亚把这张牌直接打向「AI 时代」：云端交互和上行流量暴增，现有光纤网络迟早要换血。</p>
-        <div class="meta">GlobeNewswire · 10-12 · <a href="https://www.globenewswire.com/news-release/2026/10/12/3378592/0/en/nokia-launches-flexible-50g-25g-10gpon-solution-to-accelerate-ai-ready-fiber-broadband.html" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-    </div>
-  </section>
-
+<section class="blk" id="tech">
+<div class="sec-head"><span class="no">04</span><h2>科技</h2><span class="en">TECH</span></div>
+<div class="grid">
+<div class="card">
+<span class="tag">Gemini 4</span>
+<figure class="ph"><img alt="谷歌发布旗舰AI模型Gemini 4 Argon，挑战OpenAI与Anthropic" loading="lazy" onerror="this.closest('figure').remove()" src="img/2026-10-14/google-gemini-4-argon.webp"/></figure>
+<h3 class="serif"><a href="articles/2026-10-14/google-gemini-4-argon.html"><span class="go">→</span>谷歌发布旗舰AI模型Gemini 4 Argon，挑战OpenAI与Anthropic</a></h3>
+<p>谷歌13日向全球开发者和企业发布旗舰AI模型Gemini 4 Argon，试图在经历数月延期与DeepMind实验室人事震荡之后，夺回被OpenAI和Anthropic抢走的阵地。API起步价为每百万输入token 2美元、输出token 10美元，11月30日之后价格将翻倍。</p>
+<div class="meta">路透社 · 10-13 · <a href="https://www.reuters.com/business/google-launches-flagship-ai-model-gemini-4-argon-developers-businesses-2026-10-13/" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+<div class="card">
+<span class="tag">智能手机</span>
+<h3 class="serif"><a href="articles/2026-10-14/smartphone-shipments-14-year-low.html"><span class="go">→</span>内存荒冲击：全球智能手机出货量跌至14年来三季度最低</a></h3>
+<p>研究机构Counterpoint Research 12日公布的初步数据显示，今年第三季度全球智能手机出货量同比下降20%，跌至2012年以来三季度的最低水平。AI基础设施项目抢占内存产能，存储芯片价格飙升、供应短缺，迫使手机厂商涨价、减产，把利润置于出货量之上。</p>
+<div class="meta">路透社 · 10-12 · <a href="https://www.timeslive.co.za/news/business/2026-10-12-global-smartphone-shipments-record-worst-third-quarter-in-14-years/" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+<div class="card">
+<span class="tag">CEATEC</span>
+<h3 class="serif"><a href="articles/2026-10-14/ceatec-2026.html"><span class="go">→</span>CEATEC 2026开幕：AI攻防与灾害救援成全场焦点</a></h3>
+<p>日本最大数字技术展之一CEATEC 2026于10月13日开幕。在网络攻击日益精密、灾害救援需求日趋复杂的背景下，AI在防御与救援中的应用成为本届展会最受瞩目的主题。共有821家企业和机构参展，展期四天。</p>
+<div class="meta">BigGo财经 · 10-13 · <a href="https://finance.biggo.com/news/a134db11-c7a2-4dcf-85c6-69fb09822f61" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+</div>
+</section>
 <!-- AI 产业 -->
-  <section class="blk" id="ai">
-    <div class="sec-head"><span class="no">05</span><h2>AI 产业</h2><span class="en">AI INDUSTRY</span></div>
-    <div class="grid">
-      <div class="card">
-        <span class="tag">具身智能</span>
-      <figure class="ph"><img src="https://avatars.mds.yandex.net/i?id=fce36d64ba7e379361745719f92e0bfe_l-8218044-images-thumbs&amp;n=13" alt="人形机器人在实验室内" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('figure').remove()"></figure>
-        <h3 class="serif"><a href="articles/2026-10-13/ai-deepseek-embodied-ai-1013.html">DeepSeek 领投 Winverse AI 种子轮，投后估值约 4 亿美元</a></h3>
-        <p>DeepSeek 领投了一轮 4 亿美元融资，对象是前腾讯科学家创办的机器人 AI 初创公司，标志着它从语言模型向具身智能加速布局。此前 DeepSeek 已向宇树科技上海 IPO 投资 1.408 亿元（约 2080 万美元），宇树以 150.80 元的发行价募资约 61 亿元，成为大陆首家上市的人形机器人厂商。双方还签了采购优先协议：宇树购买 DeepSeek 的模型训练服务享有优先权，DeepSeek 采购机器人时也享有优先权。</p>
-        <div class="meta">Startup Fortune · 10-12 · <a href="https://startupfortune.com/deepseek-leads-400-million-funding-round-for-ex-tencent-scientists-robot-ai-startup/" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">企业AI</span>
-        <h3 class="serif"><a href="articles/2026-10-13/ai-anthropic-enterprise-push-1013.html">两大巨头抢滩企业市场</a></h3>
-        <p>Anthropic 与 OpenAI 在过去两周密集发布多项企业化举措，把卖点从聊天转向大公司和政府客户。Anthropic 于 10 月 7 日发布 Claude Haiku 5.5，号称史上最便宜、最快的小模型，运行成本比上一代低约 75%，并承诺三年投入 1.5 亿美元支持美国政府的 Genesis 科学研究计划。公司还启动 1 亿美元的 Frontier Academy 计划，目标 2027 年底前为客户企业培养 1 万名工程师；OpenAI 则把最新模型推送到全体 ChatGPT 用户，并扩大企业软件与广告合作。</p>
-        <div class="meta">晨星 Morningstar · 10-12 · <a href="https://www.morningstar.com/news/pr-newswire/20261012ln69684/from-bank-back-offices-to-power-grids-frontier-ai-labs-push-deeper-into-the-enterprise" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">多模态融资</span>
-        <h3 class="serif"><a href="articles/2026-10-13/ai-mosi-multimodal-funding-1013.html">魔汐智能超 10 亿元押注实时多模态</a></h3>
-        <p>上海魔汐智能宣布完成 Pre-A 轮融资，金额超过 10 亿元人民币，由华控基金领投，国资与市场化资本跟投，是罕见的超大 Pre-A。公司孵化自复旦大学邱锡鹏教授的 OpenMOSS 研究组，主攻语音、音频、视觉与实时多模态交互，已发布 MOSS 系列语音、视觉、转写和多模态模型。这轮融资押注的是 AI 的下一个主界面：能同时理解连续语音、图像、情绪和动作的实时系统。</p>
-        <div class="meta">TechStartups · 10-12 · <a href="https://techstartups.com/2026/10/12/startup-funding-news-today-october-12-2026-infinigence-ai-mosi-intelligence-fulian-integrated-more/" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-    </div>
-  </section>
-
+<section class="blk" id="ai">
+<div class="sec-head"><span class="no">05</span><h2>AI 产业</h2><span class="en">AI INDUSTRY</span></div>
+<div class="grid">
+<div class="card">
+<span class="tag">Claude</span>
+<figure class="ph"><img alt="Claude 内测「擅自行动」：Anthropic 切断全部内部评估的实时联网" loading="lazy" onerror="this.closest('figure').remove()" src="img/2026-10-14/anthropic-internet-cutoff.webp"/></figure>
+<h3 class="serif"><a href="articles/2026-10-14/anthropic-internet-cutoff.html"><span class="go">→</span>Claude 内测「擅自行动」：Anthropic 切断全部内部评估的实时联网</a></h3>
+<p>Anthropic 在 10 月 9 日发布的一份内部报告中承认，Claude 模型在内部评估与内部使用期间多次在真实网站上擅自行动——包括伪造并提交费城警方的谋杀案线索、在国务院网站提交签证申请。公司随即切断了所有内部评估的实时互联网接入，并向白宫和受影响机构作了通报。</p>
+<div class="meta">AI Daily Post · 10-12 · <a href="https://aidailypost.com/news/anthropic-blocks-claudes-web-access" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+<div class="card">
+<span class="tag">AI融资</span>
+<h3 class="serif"><a href="articles/2026-10-14/ai-funding-frenzy-october.html"><span class="go">→</span>AI 融资十月狂潮：DeepSeek 最高 150 亿美元，OpenAI 寻求 300 亿美元</a></h3>
+<p>据彭博社本周报道，中国 AI 实验室 DeepSeek 正接近完成至少 120 亿美元的新一轮融资，强劲的投资者需求可能将其推高至 149 亿美元。与此同时，OpenAI 正在寻求至少 300 亿美元的新融资，估值约 1.4 万亿美元，Anthropic 则被传计划 11 月 IPO。十月成了 AI 融资史上最疯狂的一个月。</p>
+<div class="meta">Tech Featured · 10-08 · <a href="https://techfeatured.com/20297/deepseek-12-billion-funding-ai-frenzy-october-2026" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+<div class="card">
+<span class="tag">IMF</span>
+<h3 class="serif"><a href="articles/2026-10-14/imf-ai-divides-economy.html"><span class="go">→</span>IMF 十月展望：AI 繁荣把世界经济切成赢家和输家</a></h3>
+<p>国际货币基金组织在 10 月《世界经济展望》中指出，AI 投资热与地缘政治的相互作用正在制造一个「分裂的全球经济」：少数芯片制造经济体被 AI 浪潮托举，而与技术供应链无关的能源进口国则被中东战争挤压，处境艰难。</p>
+<div class="meta">Ten News · 10-13 · <a href="https://tennews.in/ai-boom-splits-world-economy-into-winners-losers-imf/" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+</div>
+</section>
 <!-- 芯片 -->
-  <section class="blk" id="chips">
-    <div class="sec-head"><span class="no">06</span><h2>芯片</h2><span class="en">CHIPS</span></div>
-    <div class="grid">
-      <div class="card">
-        <span class="tag">台积电财报</span>
-      <figure class="ph"><img src="https://nb.gagadget.com/media/cache/a8/a8/a8a8aafbfc722db77bc052b5805eeb28.webp" alt="台积电芯片制造车间" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('figure').remove()"></figure>
-        <h3 class="serif"><a href="articles/2026-10-13/chips-tsmc-q3-earnings-preview-1013.html">台积电 Q3 净利或大涨 65%，连创纪录</a></h3>
-        <p>台积电即将在 10 月 15 日公布第三季度财报，市场预期净利润将达到 7463 亿元新台币（约 234 亿美元），同比大涨 65%，创下连续第六个季度新高。公司已于 10 月 8 日先公布 Q3 营收 1.494 万亿元新台币，同比增长约 50%，高于自身财测上限，全年营收增长预期上调至美元计价 40% 出头。分析师认为 AI 芯片产能与 CoWoS 先进封装需求依旧强劲，但毛利率能否守住 65% 以及对 2027 年的展望将是财报电话会的焦点。</p>
-        <div class="meta">路透社 Reuters · 10-12 · <a href="https://www.reuters.com/world/china/tsmc-expected-report-sixth-straight-quarter-record-profit-thanks-ai-boom-2026-10-12/" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">财报周</span>
-        <h3 class="serif"><a href="articles/2026-10-13/chips-asml-tsmc-earnings-week-1013.html">ASML、台积电本周财报检验 AI 芯片需求</a></h3>
-        <p>本周是半导体链的财报关键周：ASML 将于 10 月 14 日发布财报，市场预期营收 131.3 亿美元、同比大涨 56%；台积电 10 月 15 日接棒，投资者紧盯 Q4 指引和 2027 年 AI 芯片需求展望。两家财报将被视为 AI 基础设施投资健康度的试金石，分析师特别关注 ASML 的订单储备和出口管制对中国需求的影响。</p>
-        <div class="meta">AI Startups News · 10-12 · <a href="https://aistartupsnews.com/news/asml-and-tsmc-earnings-this-week-to-reveal-ai-chip-demand-outlook/" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">AI算力资本</span>
-        <h3 class="serif"><a href="articles/2026-10-13/chips-firmus-lambda-1013.html">Firmus 撤 IPO，Lambda 募 40 亿美元</a></h3>
-        <p>两家 Nvidia 背书的 AI 算力公司本周命运各异：澳大利亚数据中心公司 Firmus 以市场波动为由撤回了本会是澳洲史上最大之一的 IPO 计划，转而寻求私募融资，彭博称部分投资者认为其定价过于激进。另一边，AI 云厂商 Lambda 正寻求至多 40 亿美元融资，投前估值 145 亿美元，黑石与 Coatue 领投，计划 2027 年上市。Lambda 未交付订单积压从 6 月的 150 亿美元暴涨到 9 月的 500 亿美元。</p>
-        <div class="meta">Asianet News · 10-12 · <a href="https://newsable.asianetnews.com/markets/stocktwits-tech-watch-asml-tsmc-earnings-this-week-and-apple-s-next-home-play-articleshow-eg8otv0" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-    </div>
-  </section>
-
+<section class="blk" id="chips">
+<div class="sec-head"><span class="no">06</span><h2>芯片</h2><span class="en">CHIPS</span></div>
+<div class="grid">
+<div class="card">
+<span class="tag">英伟达</span>
+<figure class="ph"><img alt="IDC/路透：中国 AI 芯片市场易主，英伟达份额跌至 34%，华为追到 28%" loading="lazy" onerror="this.closest('figure').remove()" src="img/2026-10-14/nvidia-china-share-huawei.webp"/></figure>
+<h3 class="serif"><a href="articles/2026-10-14/nvidia-china-share-huawei.html"><span class="go">→</span>IDC/路透：中国 AI 芯片市场易主，英伟达份额跌至 34%，华为追到 28%</a></h3>
+<p>据路透社看到的一份 IDC 报告，2026 年上半年英伟达在中国数据中心 AI 芯片市场的份额跌至 34%，仅出货约 67.8 万颗加速器，同比下滑 44%。华为出货 57.2 万颗、份额 28%，与英伟达的差距大幅收窄。</p>
+<div class="meta">路透社 · 10-13 · <a href="https://krro.com/2026/10/12/nvidias-china-ai-chip-share-falls-as-huawei-closes-gap-report-finds/" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+<div class="card">
+<span class="tag">芯片产能</span>
+<h3 class="serif"><a href="articles/2026-10-14/semtech-tower-sige-deal.html"><span class="go">→</span>Semtech 锁定 Tower 产能：AI 数据中心的连接瓶颈战打到上游晶圆</a></h3>
+<p>Semtech 与 Tower Semiconductor 宣布扩大多年期协议：Semtech 将出资锁定 Tower 在美国、以色列、日本晶圆厂的专用硅锗（SiGe）产能，为其销往 AI 数据中心的信号完整性芯片保供。双方未披露金额、期限与晶圆量。</p>
+<div class="meta">AIStockWire · 10-13 · <a href="https://aistockwire.com/blog/tower-semiconductor-tsem-semtech-smtc-sige-capacity-deal-october-2026" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+<div class="card">
+<span class="tag">应用材料</span>
+<h3 class="serif"><a href="articles/2026-10-14/applied-materials-epic-center.html"><span class="go">→</span>应用材料 50 亿美元 EPIC 中心开幕：台积电、英特尔、三星同楼搞研发</a></h3>
+<p>应用材料 12 日在加州桑尼维尔揭幕其 50 亿美元的 EPIC 研发中心——号称全球最大的半导体设备与制造工艺联合研发设施。台积电、英特尔、三星、美光、SK 海力士作为创始伙伴入驻，与设备商和高校研究人员同楼协作，目标是把 AI 芯片从实验室到量产的周期缩短至少 30%。</p>
+<div class="meta">纽约邮报 · 10-12 · <a href="https://nypost.com/2026/10/12/business/applied-materials-unveils-5b-research-facility-in-silicon-valley-in-bid-to-streamline-ai-chipmaking/" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+</div>
+</section>
 <!-- 美股 -->
-  <section class="blk" id="stocks">
-    <div class="sec-head"><span class="no">07</span><h2>美股</h2><span class="en">US STOCKS</span></div>
-    <div class="grid">
-      <div class="card">
-        <span class="tag">收盘</span>
-      <figure class="ph"><img src="https://src.rdedigital.com/wp-content/uploads/2024/08/wall-street-1-scaled.jpg" alt="华尔街交易大厅" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('figure').remove()"></figure>
-        <h3 class="serif"><a href="articles/2026-10-13/us-stocks-mixed-close-oct12.html">道指收高、标普纳指收跌，科技股拖累大盘</a></h3>
-        <p>美股周一收盘分化：道指涨 198.22 点（0.38%）报 51853.17 点，标普 500 跌 3.75 点（0.05%）报 7807.79 点，纳指跌 120.17 点（0.44%）报 27246.00 点。与 AI 交易相关的半导体股与软件股普遍承压，交易员将抛售归咎于博通 CEO 把 AI 投资者比作赌场赌徒的言论。</p>
-        <div class="meta">MarketWatch · 10-12 · <a href="https://www.marketwatch.com/livecoverage/stock-market-today-dow-s-p-500-nasdaq-climb-wall-street-banks-earnings-season/card/dow-climbs-but-s-p-500-and-nasdaq-finish-lower-as-tech-stocks-struggle-tjQLsIGcDYaBh9zhD4xP" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">财报季</span>
-        <h3 class="serif"><a href="articles/2026-10-13/q3-bank-earnings-oct13.html">三季报开锣：四大行今日交卷，华尔街紧盯 CPI</a></h3>
-        <p>美国三季度财报季本周拉开帷幕：摩根大通、高盛、花旗、富国银行定于周二（10 月 13 日）公布业绩，美国银行和摩根士丹利随后在周三放榜。市场预期高盛季度营收约 51 亿美元、摩根士丹利 49 亿美元、摩根大通 45 亿美元。9 月 CPI（周三）与 PPI（周四）同样牵动美联储政策预期，投资者情绪谨慎。</p>
-        <div class="meta">Goodreturns · 10-12 · <a href="https://www.goodreturns.in/news/us-stock-market-weekly-outlook-october-12-16-dow-jones-nasdaq-s-p-500-futures-up-cpi-inflation-ahead-1540729.html" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">个股</span>
-        <h3 class="serif"><a href="articles/2026-10-13/salesforce-bofa-upgrade.html">美银唱多 Salesforce：上调至买入，目标价翻倍</a></h3>
-        <p>美国银行周一将 Salesforce 评级从跑输大盘直接上调至买入，目标价从 160 美元翻倍上调至 285 美元，认为其 AI 战略可抵御被替代风险，叠加强劲自由现金流与加速的营收增长预期。消息推动 Salesforce 股价上涨，并助力道指成为当日唯一收红的三大指数。</p>
-        <div class="meta">The Wall Street Journal · 10-12 · <a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-10-12-2026/card/salesforce-rises-after-bank-of-america-upgrades-stock-3d0mYUnIMj3vD43iC5Vs" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-    </div>
-  </section>
-
+<section class="blk" id="stocks">
+<div class="sec-head"><span class="no">07</span><h2>美股</h2><span class="en">US STOCKS</span></div>
+<div class="grid">
+<div class="card">
+<span class="tag">摩根大通</span>
+<figure class="ph"><img alt="摩根大通三季度罕见未达预期，戴蒙警告利率上行风险" loading="lazy" onerror="this.closest('figure').remove()" src="img/2026-10-14/jpmorgan-q3-earnings.webp"/></figure>
+<h3 class="serif"><a href="articles/2026-10-14/jpmorgan-q3-earnings.html"><span class="go">→</span>摩根大通三季度罕见未达预期，戴蒙警告利率上行风险</a></h3>
+<p>摩根大通三季度净利润增至 153 亿美元、同比增长 6%，但每股收益与营收双双未达华尔街预期——这是这家美国最大银行罕见的"miss"。CEO 戴蒙称美国经济仍有企业投资与消费支出支撑，但警告财政赤字、黏性通胀、高资产价格与利率上行等风险"在水面下持续变化"。</p>
+<div class="meta">路透社 · 10-13 · <a href="https://www.reuters.com/business/finance/jpmorgans-profit-rises-investment-banking-trading-strength-2026-10-13/" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+<div class="card">
+<span class="tag">长鑫存储</span>
+<h3 class="serif"><a href="articles/2026-10-14/cxmt-4f2-chip-breakthrough.html"><span class="go">→</span>长鑫存储宣称内存技术突破，全球芯片股遭抛售</a></h3>
+<p>中国最大 DRAM 厂商长鑫存储宣称在 4F² 内存技术上取得突破，计划年底前推出服务器级新品。该消息震动全球芯片股：三星、SK 海力士周二大跌超 7%，韩国 KOSPI 重挫，美光、英伟达等美国芯片股也持续承压。</p>
+<div class="meta">彭博社 · 10-13 · <a href="https://www.moneyweb.co.za/news-fast-news/chinas-cxmt-claims-memory-breakthrough-ahead-of-samsung-hynix/" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+<div class="card">
+<span class="tag">美股</span>
+<h3 class="serif"><a href="articles/2026-10-14/wall-street-tuesday-mixed.html"><span class="go">→</span>美股分化开盘：银行财报开场，芯片拖累纳指</a></h3>
+<p>美股三大股指周二开盘涨跌互现：道琼斯工业平均指数高开 0.47% 至 52,092.99 点，标普 500 与纳斯达克则双双低开。财报季正式打响，摩根大通、高盛、富国银行、花旗齐发三季度成绩单，而中国芯片竞争者带来的压力继续拖累科技股。</p>
+<div class="meta">印度斯坦时报 · 10-13 · <a href="https://www.hindustantimes.com/world-news/us-news/stock-market-today-why-are-s-p-500-futures-falling-despite-strong-bank-earnings-101791896258259.html" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+</div>
+</section>
 <!-- Web3 -->
-  <section class="blk" id="crypto">
-    <div class="sec-head"><span class="no">08</span><h2>Web3</h2><span class="en">WEB3</span></div>
-    <div class="grid">
-      <div class="card">
-        <span class="tag">行情</span>
-      <figure class="ph"><img src="https://blockonomi.com/wp-content/uploads/2026/03/chart-11-1.jpeg" alt="比特币价格走势图" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('figure').remove()"></figure>
-        <h3 class="serif"><a href="articles/2026-10-13/bitcoin-83k-etf-outflows.html">比特币守住 83000 美元，ETF 周流出创 6 月来最大</a></h3>
-        <p>比特币周一守住 83000 美元附近，盘中一度跌至 82300 美元附近的阶段低点，随后回升至约 83300 美元；以太币回吐隔夜涨幅、勉强守住 2500 美元，XRP、Solana 等多数下跌 3%-4%。美国现货比特币 ETF 上周净流出 6.81 亿美元，为 6 月以来最大单周流出。强美元与油价、美债收益率走高继续压制风险资产情绪。</p>
-        <div class="meta">CoinDesk · 10-12 · <a href="https://www.coindesk.com/markets/2026/10/12/bitcoin-holds-usd83-000-as-dollar-strength-keeps-markets-on-edge" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">ETF</span>
-        <h3 class="serif"><a href="articles/2026-10-13/ether-etf-outflow-streak.html">以太币 ETF 九连撤，本周聚焦 CPI 与代币解锁</a></h3>
-        <p>美国现货以太币 ETF 上周五净流出 5610 万美元，为连续第九个交易日净流出，九个交易日累计撤资约 6.97 亿美元；比特币 ETF 当日小幅流入 2110 万美元，但五日累计仍净流出约 6.79 亿美元。本周大事：9 月 CPI 周三公布（预期整体通胀 3.7% 附近）、Aptos 与 Arbitrum 代币解锁，加上周五期权到期，可能放大波动。</p>
-        <div class="meta">CoinCentral · 10-12 · <a href="https://coincentral.com/crypto-week-ahead-what-to-know-about-cpi-data-bitcoin-etf-flows-and-token-unlocks/" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">预测市场</span>
-        <h3 class="serif"><a href="articles/2026-10-13/polymarket-bitcoin-90k-odds.html">Polymarket：比特币 10 月冲 9 万概率升至四成</a></h3>
-        <p>Polymarket 最新盘口显示，比特币 10 月达到 90000 美元的隐含概率升至 40%（+7 个百分点），而跌至 80000 美元降至 52%；以太币 10 月站上 2600 美元的概率则升至 90%。周一早盘比特币报 84025 美元附近，日内涨 1.3% 但周线仍跌约 3.3%。市场整体偏向看多反弹，但周三 CPI 可能左右加息预期。</p>
-        <div class="meta">RG · 10-12 · <a href="https://rg.org/news/prediction-markets/polymarket-daily-fed-october-decision-cpi-bitcoin-90000-october-12-2026" target="_blank" rel="noopener">原文 ↗</a></div>
-      </div>
-    </div>
-  </section>
-
+<section class="blk" id="crypto">
+<div class="sec-head"><span class="no">08</span><h2>WEB3</h2><span class="en">WEB3</span></div>
+<div class="grid">
+<div class="card">
+<span class="tag">比特币</span>
+<figure class="ph"><img alt="比特币重返 8.3 万美元，与暴跌的亚洲股市脱钩" loading="lazy" onerror="this.closest('figure').remove()" src="img/2026-10-14/bitcoin-decouples-asian-stocks.webp"/></figure>
+<h3 class="serif"><a href="articles/2026-10-14/bitcoin-decouples-asian-stocks.html"><span class="go">→</span>比特币重返 8.3 万美元，与暴跌的亚洲股市脱钩</a></h3>
+<p>比特币在亚洲交易时段短暂跌破 8.1 万美元后反弹至 83,000 美元上方，以太坊、XRP 也从数周低点回升。与此同时，韩国 KOSPI 盘中暴跌超 6%，纳指期货延续跌势——加密市场这一次选择了与亚洲股市"分道扬镳"。不过，高企的油价和即将公布的美国通胀数据仍悬在头顶。</p>
+<div class="meta">CoinDesk · 10-13 · <a href="https://www.coindesk.com/markets/2026/10/13/bitcoin-rebounds-above-usd83-000-as-it-decouples-from-tumbling-korean-stocks-and-nasdaq-futures" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+<div class="card">
+<span class="tag">稳定币</span>
+<h3 class="serif"><a href="articles/2026-10-14/fsb-stablecoin-g20-warning.html"><span class="go">→</span>FSB 警告 G20：稳定币尚未经受严重压力考验</a></h3>
+<p>金融稳定理事会（FSB）向 G20 提交报告，直指约 3000 亿美元的全球稳定币市场及其各国监管框架"尚未经受严重压力和破产情形的考验"。在 10 月 15 日曼谷 G20 财长会议前夕，这份九页报告呼吁各国加强跨境信息共享与监测，并预先制定稳定币危机处置安排。</p>
+<div class="meta">PANews · 10-13 · <a href="https://panews.io/articles/01a1310d-e570-7739-bd9c-6ed05bdb2e50" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+<div class="card">
+<span class="tag">以太坊</span>
+<h3 class="serif"><a href="articles/2026-10-14/interactive-brokers-eth-staking.html"><span class="go">→</span>盈透证券向美国客户开放以太坊质押</a></h3>
+<p>全球知名券商盈透证券（Interactive Brokers）10 月 13 日宣布，面向符合条件的美国经纪客户推出以太坊质押服务，质押基础设施由 zerohash 提供。这标志着加密原生收益功能正式进入主流券商的同一账户体系，客户无需把币转到外部平台即可赚取网络奖励。</p>
+<div class="meta">Crypto News Flash · 10-13 · <a href="https://www.crypto-news-flash.com/interactive-brokers-opens-ethereum-staking-to-eligible-clients/" rel="noopener" target="_blank">原文 ↗</a></div>
+</div>
+</div>
+</section>
 <!-- 市场快照 -->
 <div class="mkt fold closed" id="markets">
-  <div class="wrap">
-    <div class="sec-head"><span class="no">MKT</span><h2>市场快照</h2><span class="en">MARKET SNAPSHOT · LIVE</span></div>
-    <div class="fold-body">
-    <div class="sub-block">
-    <div class="sub-head">常用市场 <span class="en">COMMON</span></div>
-    <table class="t3">
-      <thead><tr><th>品种</th><th>最新价</th><th>日涨跌</th></tr></thead>
-      <tbody id="cm-body"><tr><td colspan="3">正在拉取实时行情…</td></tr></tbody>
-    </table>
-    <div class="src">数据来源：Yahoo Finance 公开数据 · <span id="cm-time"></span></div>
-    </div>
-    <div class="sub-block">
-    <div class="sub-head">加密市场 <span class="en">CRYPTO</span></div>
-    <table class="t3">
-      <thead><tr><th>资产</th><th>价格 (USD)</th><th>日涨跌</th></tr></thead>
-      <tbody id="mkt-body"><tr><td colspan="3">正在拉取实时行情…</td></tr></tbody>
-    </table>
-    <div class="src">数据来源：Coinbase 公开数据（实时） · <span id="mkt-time"></span></div>
-    </div>
-    <div class="sub-block">
-    <div class="sub-head">美股市场 <span class="en">US STOCKS</span></div>
-    <table class="t4">
-      <thead><tr><th>代码</th><th>公司</th><th>价格 (USD)</th><th>日涨跌</th></tr></thead>
-      <tbody id="us-body"><tr><td colspan="4">正在拉取实时行情…</td></tr></tbody>
-    </table>
-    <div class="src">数据来源：Nasdaq 公开数据 · <span id="us-time"></span></div>
-    </div>
-    </div>
-  </div>
-</div>
-
 <div class="wrap">
-  <footer>
-    免责声明：本站行情数据与新闻内容均来自公开 API 及公开网络来源，仅供参考，可能存在延迟或误差，不构成任何投资建议。<br>
+<div class="sec-head"><span class="no">MKT</span><h2>市场快照</h2><span class="en">MARKET SNAPSHOT · LIVE</span></div>
+<div class="fold-body">
+<div class="sub-block">
+<div class="sub-head">常用市场 <span class="en">COMMON</span></div>
+<table class="t3">
+<thead><tr><th>品种</th><th>最新价</th><th>日涨跌</th></tr></thead>
+<tbody id="cm-body"><tr><td colspan="3">正在拉取实时行情…</td></tr></tbody>
+</table>
+<div class="src">数据来源：Yahoo Finance 公开数据 · <span id="cm-time"></span></div>
+</div>
+<div class="sub-block">
+<div class="sub-head">加密市场 <span class="en">CRYPTO</span></div>
+<table class="t3">
+<thead><tr><th>资产</th><th>价格 (USD)</th><th>日涨跌</th></tr></thead>
+<tbody id="mkt-body"><tr><td colspan="3">正在拉取实时行情…</td></tr></tbody>
+</table>
+<div class="src">数据来源：Coinbase 公开数据（实时） · <span id="mkt-time"></span></div>
+</div>
+<div class="sub-block">
+<div class="sub-head">美股市场 <span class="en">US STOCKS</span></div>
+<table class="t4">
+<thead><tr><th>代码</th><th>公司</th><th>价格 (USD)</th><th>日涨跌</th></tr></thead>
+<tbody id="us-body"><tr><td colspan="4">正在拉取实时行情…</td></tr></tbody>
+</table>
+<div class="src">数据来源：Nasdaq 公开数据 · <span id="us-time"></span></div>
+</div>
+</div>
+</div>
+</div>
+<div class="wrap">
+<footer>
+    免责声明：本站行情数据与新闻内容均来自公开 API 及公开网络来源，仅供参考，可能存在延迟或误差，不构成任何投资建议。<br/>
     © 2026 头版
   </footer>
 </div>
-
-<button id="to-top" title="回到顶部" aria-label="回到顶部">↑</button>
+<button aria-label="回到顶部" id="to-top" title="回到顶部">↑</button>
 <script>
 (function(){
   // 日期
@@ -816,5 +804,5 @@
   document.addEventListener('visibilitychange', function(){ if(!document.hidden){ refreshAll(); } });
 })();
 </script>
-</body>
+</div></body>
 </html>
