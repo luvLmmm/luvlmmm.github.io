@@ -239,7 +239,7 @@
 <div class="w-sched"><span>本期 <span id="w-ed">10-14</span> 已更新</span><span class="en">EDITION <span id="w-ed-en">10-14</span> READY</span><span class="tm">由 Muse 自动采编、排版与更新</span><span class="en tm">AUTOMATED BY MUSE</span></div>
 <div class="w-bottom"><span>EST. 2026</span></div>
 </div>
-<div class="ticker" title="行情滚动（Coinbase 公开数据，实时）">
+<div class="ticker" title="行情滚动（Coinbase / OKX 公开数据，实时）">
 <span class="tk-label">LIVE</span>
 <div class="ticker-view"><div class="ticker-inner" id="ticker">正在加载行情…</div></div>
 </div>
@@ -500,7 +500,7 @@
 <thead><tr><th>资产</th><th>价格 (USD)</th><th>日涨跌</th></tr></thead>
 <tbody id="mkt-body"><tr><td colspan="3">正在拉取实时行情…</td></tr></tbody>
 </table>
-<div class="src">数据来源：Coinbase 公开数据（实时） · <span id="mkt-time"></span></div>
+<div class="src">数据来源：Coinbase / OKX 公开数据 · <span id="mkt-time"></span></div>
 </div>
 <div class="sub-block">
 <div class="sub-head">美股市场 <span class="en">US STOCKS</span></div>
@@ -572,6 +572,28 @@
     {symbol:'XRP', price:1.41,  chg:0.6},
     {symbol:'DOGE',price:0.142, chg:0.9}
   ];
+  // 带超时的 fetch：大陆网络下被墙域名会一直挂起，8 秒熔断避免拖死轮询
+  function fetchT(url, ms){
+    var ctl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+    var t = setTimeout(function(){ if(ctl) ctl.abort(); }, ms || 8000);
+    var opt = ctl ? {signal: ctl.signal} : {};
+    return fetch(url, opt).then(function(r){
+      clearTimeout(t);
+      if(!r.ok) throw 0;
+      return r.json();
+    }, function(e){ clearTimeout(t); throw e || 0; });
+  }
+  // 取多个 promise 中第一个成功的（Promise.any 的兼容写法）
+  function firstOk(list){
+    return new Promise(function(resolve, reject){
+      var failed = 0;
+      list.forEach(function(p){
+        Promise.resolve(p).then(resolve, function(){
+          if(++failed === list.length) reject(new Error('all failed'));
+        });
+      });
+    });
+  }
   // Coinbase 直调：ticker 取现价，stats 取 24h 开盘价算日涨跌
   var CB_COINS = [
     {symbol:'BTC', pair:'BTC-USD'},
@@ -583,13 +605,31 @@
   function cbQuote(c){
     var base = 'https://api.exchange.coinbase.com/products/'+c.pair;
     return Promise.all([
-      fetch(base+'/ticker').then(function(r){ if(!r.ok) throw 0; return r.json(); }),
-      fetch(base+'/stats').then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      fetchT(base+'/ticker'),
+      fetchT(base+'/stats')
     ]).then(function(rs){
       var price = parseFloat(rs[0].price), open = parseFloat(rs[1].open);
       if(!(price>0) || !(open>0)) throw 0;
       return {symbol:c.symbol, price:price, chg:(price-open)/open*100};
     });
+  }
+  // OKX 直调：大陆可直连，单接口返回现价与 24h 开盘价
+  var OKX_COINS = [
+    {symbol:'BTC', inst:'BTC-USDT'},
+    {symbol:'ETH', inst:'ETH-USDT'},
+    {symbol:'SOL', inst:'SOL-USDT'},
+    {symbol:'XRP', inst:'XRP-USDT'},
+    {symbol:'DOGE', inst:'DOGE-USDT'}
+  ];
+  function okxQuote(c){
+    return fetchT('https://www.okx.com/api/v5/market/ticker?instId='+c.inst)
+      .then(function(j){
+        if(!j || j.code!=='0' || !j.data || !j.data.length) throw 0;
+        var t = j.data[0];
+        var price = parseFloat(t.last), open = parseFloat(t.open24h);
+        if(!(price>0) || !(open>0)) throw 0;
+        return {symbol:c.symbol, price:price, chg:(price-open)/open*100};
+      });
   }
   function fmt(p){ return p>=100 ? p.toLocaleString('en-US',{maximumFractionDigits:0})
     : p>=1 ? p.toLocaleString('en-US',{maximumFractionDigits:2})
@@ -646,11 +686,15 @@
     }catch(e){}
   }
   function refreshCrypto(){
-    // 优先浏览器直调 Coinbase（CORS 允许），10 秒级实时；失败则回退服务器 JSON
-    Promise.all(CB_COINS.map(cbQuote))
-      .then(function(q){
-        renderTicker(q); renderTable(q);
-        stamp('mkt-time', '实时');
+    // 浏览器直调：Coinbase 与 OKX 并发竞速，谁先成功用谁（大陆走 OKX，海外两者皆可），
+    // 10 秒级实时；都失败则回退服务器 JSON
+    firstOk([
+      Promise.all(CB_COINS.map(cbQuote)).then(function(q){ return {q:q, src:'Coinbase'}; }),
+      Promise.all(OKX_COINS.map(okxQuote)).then(function(q){ return {q:q, src:'OKX'}; })
+    ])
+      .then(function(r){
+        renderTicker(r.q); renderTable(r.q);
+        stamp('mkt-time', '实时 · ' + r.src);
         document.getElementById('mkt-body').dataset.live='1';
       })
       .catch(function(){
