@@ -1,46 +1,46 @@
 {
-  "updated_utc": "2026-10-12T23:13:16Z",
-  "updated_et": "美东 10-12 19:13",
+  "updated_utc": "2026-10-13T00:22:49Z",
+  "updated_et": "美东 10-12 20:22",
   "quotes": [
     {
       "symbol": "BTC",
-      "price": 81916,
-      "chg": -2.01228
+      "price": 81377,
+      "chg": -2.78857
     },
     {
       "symbol": "ETH",
-      "price": 2457.74,
-      "chg": -2.986
+      "price": 2422.83,
+      "chg": -4.44706
     },
     {
       "symbol": "BNB",
-      "price": 735.27,
-      "chg": -2.36612
+      "price": 726.4,
+      "chg": -3.48013
     },
     {
       "symbol": "XRP",
-      "price": 1.34,
-      "chg": -4.44334
+      "price": 1.33,
+      "chg": -5.44392
     },
     {
       "symbol": "SOL",
-      "price": 106.09,
-      "chg": -4.45965
+      "price": 104.02,
+      "chg": -6.38495
     },
     {
       "symbol": "TRX",
-      "price": 0.329169,
-      "chg": -0.25878
+      "price": 0.328466,
+      "chg": -0.44713
     },
     {
       "symbol": "ZEC",
-      "price": 1192.88,
-      "chg": -5.49017
+      "price": 1150.19,
+      "chg": -10.25428
     },
     {
       "symbol": "DOGE",
-      "price": 0.082959,
-      "chg": -4.2562
+      "price": 0.081656,
+      "chg": -5.80616
     }
   ]
 }
