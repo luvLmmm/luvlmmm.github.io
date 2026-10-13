@@ -197,6 +197,8 @@
   #to-top.show{opacity:1;pointer-events:auto;transform:none}
   #to-top:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
   @keyframes blink{50%{opacity:.25}}
+  .w-kicker .caret{display:inline-block;animation:caret-blink 1.06s steps(1) infinite}
+  @keyframes caret-blink{50%{opacity:0}}
 </style>
 </head>
 <body>
@@ -207,7 +209,7 @@
   <div class="w-folio"><span id="w-date">2026年10月13日</span><span><span class="live-dot"></span>LIVE</span></div>
   <div class="w-stage">
     <div class="w-box">
-      <div class="w-kicker">THE FRONT PAGE</div>
+      <div class="w-kicker">THE FRONT PAGE<span class="caret">_</span></div>
       <div class="w-title t-vert">头版</div>
       <div class="w-rule"></div>
       <div class="w-secs">为你筛选值得读的新闻<br>每天一页读完</div>
