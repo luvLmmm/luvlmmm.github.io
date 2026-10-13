@@ -807,8 +807,10 @@
   _ttVis();
   if (_tt) _tt.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
   function refreshAll(){ refreshCrypto(); refreshUS(); refreshCM(); }
+  function refreshSlow(){ refreshUS(); refreshCM(); }
   refreshAll();
-  setInterval(refreshAll, 10000);
+  setInterval(function(){ if(!document.hidden) refreshCrypto(); }, 10000);   // 加密 10 秒实时
+  setInterval(function(){ if(!document.hidden) refreshSlow(); }, 300000);    // 美股/常用市场 5 分钟轮询
   // 从后台切回前台时立即刷新（浏览器会节流后台标签页的定时器）
   document.addEventListener('visibilitychange', function(){ if(!document.hidden){ refreshAll(); } });
 })();
