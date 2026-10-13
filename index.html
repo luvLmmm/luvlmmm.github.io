@@ -64,7 +64,8 @@
   .dateline{display:flex;justify-content:space-between;align-items:center;gap:12px;
     border-top:1px solid var(--line);border-bottom:1px solid var(--line);
     margin-top:20px;padding:8px 2px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);flex-wrap:wrap}
-  nav.secs{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;padding:14px 0 4px}
+  nav.secs{display:flex;flex-direction:column;align-items:center;gap:5px;padding:10px 0 2px}
+  nav.secs .sec-row{display:flex;justify-content:center;gap:26px}
   nav.secs a{font-size:13px;letter-spacing:.35em;font-weight:600;position:relative;padding:4px 2px}
   nav.secs a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--ink);
     transform:scaleX(0);transition:transform .25s}
@@ -251,8 +252,9 @@
 <span><span class="live-dot"></span>LIVE</span>
 </div>
 <nav class="secs">
-<a href="#world">国际</a><a href="#econ">经济</a><a href="#poli">政治</a>
-<a href="#tech">科技</a><a href="#ai">AI产业</a><a href="#chips">芯片</a><a href="#stocks">美股</a><a href="#crypto">WEB3</a><a href="#markets">市场快照</a>
+<div class="sec-row"><a href="#world">国际</a><a href="#econ">经济</a><a href="#poli">政治</a><a href="#tech">科技</a></div>
+<div class="sec-row"><a href="#ai">AI产业</a><a href="#chips">芯片</a><a href="#stocks">美股</a><a href="#crypto">WEB3</a></div>
+<div class="sec-row"><a href="#markets">市场快照</a></div>
 </nav>
 </header>
 <!-- HERO -->
