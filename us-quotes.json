@@ -1,71 +1,71 @@
 {
-  "updated_utc": "2026-10-12T23:50:26Z",
-  "updated_et": "美东 10-12 19:50",
+  "updated_utc": "2026-10-13T00:19:44Z",
+  "updated_et": "\u7f8e\u4e1c 10-12 20:19",
   "quotes": [
     {
       "symbol": "NVDA",
-      "price": "224.71",
-      "chg": "-0.71"
+      "price": "225.331",
+      "chg": "-0.44"
     },
     {
       "symbol": "AAPL",
-      "price": "341.28",
-      "chg": "+0.09"
+      "price": "341.2179",
+      "chg": "+0.07"
     },
     {
       "symbol": "MSFT",
-      "price": "541.3944",
-      "chg": "+0.05"
+      "price": "541.20",
+      "chg": "+0.01"
     },
     {
       "symbol": "AVGO",
-      "price": "354.00",
-      "chg": "-0.21"
+      "price": "353.0842",
+      "chg": "-0.46"
     },
     {
       "symbol": "AMD",
-      "price": "590.00",
-      "chg": "-0.71"
+      "price": "588.7812",
+      "chg": "-0.92"
     },
     {
       "symbol": "TSM",
-      "price": "443.93",
-      "chg": "-0.15"
+      "price": "443.89",
+      "chg": "-0.16"
     },
     {
       "symbol": "MU",
-      "price": "975.25",
-      "chg": "-1.39"
+      "price": "975.20",
+      "chg": "-1.40"
     },
     {
       "symbol": "INTC",
-      "price": "100.2514",
-      "chg": "-1.08"
-    },
-    {
-      "symbol": "META",
-      "price": "740.75",
-      "chg": "-0.30"
-    },
-    {
-      "symbol": "GOOGL",
-      "price": "353.0169",
-      "chg": "+0.08"
-    },
-    {
-      "symbol": "AMZN",
-      "price": "259.4886",
-      "chg": "-0.02"
-    },
-    {
-      "symbol": "ARM",
-      "price": "252.80",
+      "price": "100.3801",
       "chg": "-0.96"
     },
     {
+      "symbol": "META",
+      "price": "741.4275",
+      "chg": "-0.21"
+    },
+    {
+      "symbol": "GOOGL",
+      "price": "353.30",
+      "chg": "+0.16"
+    },
+    {
+      "symbol": "AMZN",
+      "price": "259.73",
+      "chg": "+0.08"
+    },
+    {
+      "symbol": "ARM",
+      "price": "252.975",
+      "chg": "-0.89"
+    },
+    {
       "symbol": "SNDK",
-      "price": "1456.20",
-      "chg": "-2.09"
+      "price": "1453.76",
+      "chg": "-2.26"
     }
   ]
 }
