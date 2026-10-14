@@ -82,7 +82,7 @@
     color:var(--sub);border:1px solid var(--line);padding:4px 10px;margin-bottom:14px}
   .hero-main h2{font-size:clamp(28px,4.2vw,44px);line-height:1.4;font-weight:900;margin-bottom:14px}
   .hero-main h2 a:hover{text-decoration:underline;text-underline-offset:6px}
-  h3.serif .go{font-family:var(--mono);font-size:1.05em;color:var(--ink);margin-left:.45em;white-space:nowrap;display:inline-block;transition:transform .25s ease}
+  h3.serif .go{font-family:var(--mono);font-size:1.2em;color:var(--ink);margin-left:.45em;white-space:nowrap;display:inline-block;transition:transform .25s ease}
   h3.serif a:hover .go{transform:translateX(4px)}
   .dek{color:var(--sub);font-size:15.5px;line-height:1.9}
   .meta{margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.06em}
@@ -864,9 +864,71 @@
   window.addEventListener('scroll', _ttVis, {passive:true});
   _ttVis();
   if (_tt) _tt.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+  // 卡片标题箭头：对齐到标题第一行末尾的 x 位置（纯 CSS 无法跟随每行文字末端）
+  function placeGo(a, go, textNode){
+    var range;
+    try{ range = document.createRange(); }catch(e){ return false; }
+    try{
+      range.selectNodeContents(textNode);
+      var rects = range.getClientRects();
+      if(rects.length < 2) return false; // 单行标题：保持行内箭头
+      var aRect = a.getBoundingClientRect();
+      var firstRight = rects[0].right - aRect.left;
+      var lastRect = rects[rects.length - 1];
+      var lastRight = lastRect.right - aRect.left;
+      var goW = go.offsetWidth || 34;
+      var x = Math.max(firstRight, lastRight) + 12;
+      if(x + goW > aRect.width - 2) return false; // 放不下：保持行内
+      var yMid = (lastRect.top + lastRect.bottom) / 2 - aRect.top;
+      a.style.position = 'relative';
+      a.style.display = 'block';
+      go.style.position = 'absolute';
+      go.style.left = x + 'px';
+      go.style.top = yMid + 'px';
+      go.style.transform = 'translateY(-50%)';
+      go.style.marginLeft = '0';
+      go.style.whiteSpace = 'nowrap';
+      return true;
+    }catch(e){ return false; }
+  }
+  function alignGo(){
+    Array.prototype.forEach.call(document.querySelectorAll('h3.serif > a'), function(a){
+      var go = a.querySelector('.go');
+      if(!go) return;
+      go.style.cssText = '';
+      a.style.position = ''; a.style.display = '';
+      var textNode = null;
+      for(var n = a.firstChild; n; n = n.nextSibling){
+        if(n.nodeType === 3 && /\S/.test(n.textContent)){ textNode = n; break; }
+      }
+      if(!textNode) return;
+      if(!placeGo(a, go, textNode)) return;
+      // 文字重排后二次校验：若与箭头重叠则往右顺延，放不下则回退行内
+      requestAnimationFrame(function(){
+        try{
+          var range2 = document.createRange();
+          range2.selectNodeContents(textNode);
+          var r2 = range2.getClientRects();
+          if(!r2.length) return;
+          var aRect2 = a.getBoundingClientRect();
+          var lastRight2 = r2[r2.length - 1].right - aRect2.left;
+          var curX = parseFloat(go.style.left) || 0;
+          var goW2 = go.offsetWidth || 34;
+          if(curX < lastRight2 + 10){
+            var nx = lastRight2 + 12;
+            if(nx + goW2 <= aRect2.width - 2){ go.style.left = nx + 'px'; }
+            else { go.style.cssText = ''; a.style.position = ''; a.style.display = ''; }
+          }
+        }catch(e){}
+      });
+    });
+  }
   function refreshAll(){ refreshCrypto(); refreshUS(); refreshCM(); }
   function refreshSlow(){ refreshUS(); refreshCM(); }
   refreshAll();
+  alignGo();
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(function(){ alignGo(); }); }
+  var _agT; window.addEventListener('resize', function(){ clearTimeout(_agT); _agT = setTimeout(alignGo, 200); });
   setInterval(function(){ if(!document.hidden) refreshCrypto(); }, 10000);   // 加密 10 秒实时
   setInterval(function(){ if(!document.hidden) refreshSlow(); }, 300000);    // 美股/常用市场 5 分钟轮询
   // 从后台切回前台时立即刷新（浏览器会节流后台标签页的定时器）
