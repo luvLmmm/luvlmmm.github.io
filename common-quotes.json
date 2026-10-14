@@ -1,21 +1,21 @@
 {
-  "updated_utc": "2026-10-14T11:15:59Z",
-  "updated_et": "美东 10-14 07:15",
+  "updated_utc": "2026-10-14T11:25:59Z",
+  "updated_et": "美东 10-14 07:25",
   "quotes": [
     {
       "symbol": "XAU",
-      "price": 4159.5,
-      "chg": -0.43
+      "price": 4160.7,
+      "chg": -0.4
     },
     {
       "symbol": "XAG",
-      "price": 58.645,
-      "chg": -1.48
+      "price": 58.735,
+      "chg": -1.33
     },
     {
       "symbol": "BRENT",
-      "price": 106.55,
-      "chg": 0.81
+      "price": 106.42,
+      "chg": 0.69
     },
     {
       "symbol": "USDCNY",
