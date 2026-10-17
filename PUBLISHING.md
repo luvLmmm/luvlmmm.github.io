@@ -6,7 +6,7 @@
 
 ## 每天必须遵守的规则
 
-1. **不改版式、样式和结构。** `index.html` 里的 `<style>` 整段保持不动。欢迎页 `#welcome` 的 DOM、class、按钮和排版保持不动。行情脚本的行为保持不动：`#dateline-date` 和 `#w-date` 仍由读者浏览器的本地日期覆盖，不要改这段日期脚本。允许改的只有：欢迎页期次、两处署名的文字、日期的静态初值、`<!-- HERO -->` 到 `<!-- 市场 -->` 之间的新闻、三份行情 JSON，以及脚本里已经存在的 `FALLBACK`、`CM_FALLBACK`、`US_FALLBACK` 数字和备用时间标签。
+1. **不改版式、样式和结构。** `index.html` 里的 `<style>` 整段保持不动。欢迎页 `#welcome` 的 DOM、class、按钮和排版保持不动。不要改日期脚本、折叠和行情滚动：`#dateline-date` 和 `#w-date` 仍由读者浏览器的本地日期覆盖。轮询保持加密 10 秒、常用市场和美股 5 分钟，外加 `visibilitychange`。实时来源按下面「行情」一节，不要改回只读 JSON。允许改的只有：欢迎页期次、两处署名的文字、日期的静态初值、`<!-- HERO -->` 到 `<!-- 市场 -->` 之间的新闻、三份行情 JSON、脚本里的 `FALLBACK`、`CM_FALLBACK`、`US_FALLBACK` 数字和备用时间标签，以及行情一节写明的取数地址。
 2. **头条和次条不与版块重复。** 1 条头条 + 2 条次条，必须是另外 24 条版块稿以外的故事。英雄位和八个版块之间，不得把同一事件写成两篇。相关但角度不同的稿可以并存（例如一条写信用利差，另一条写当日股价；一条写价格，另一条写 ETF 资金流），标题和正文重点必须不同。
 3. **配图只留本地 WebP。** 放在 `img/YYYY-MM-DD/`。没有干净、允许使用的原图就删掉 `figure`，不要外链，不要用带出版方水印或叠字的图。
 4. **欢迎页期次每天改成这一期的日期。** 两处 span 都改：`本期 <span id="w-ed">MM-DD</span> 已更新` 和 `EDITION <span id="w-ed-en">MM-DD</span> READY`。只改文字，不改标签。
@@ -144,9 +144,25 @@ AI 产业的 kicker 是 `AI产业`，中间没有空格。
 - 转成 WebP。最长边不超过 1200 像素，质量约 80。用 Pillow 即可：`image.save(path, "WEBP", quality=80)`。
 - 站点 CSS 已经做了灰度、`object-fit: cover` 和 16:9。不要在文件上再做成灰度，也不要改 CSS。
 - 首页路径是 `img/YYYY-MM-DD/...`。文章页路径是 `../../img/YYYY-MM-DD/...`。
-- 不是每张卡片都有图。经济、政治、美股、Web3 经常没有干净原图，省略 `figure` 是对的。
+- 八个版块的首页第一张卡片必须有本地 WebP 的 `figure`，标记与上面的卡片示例相同。只有确实找不到干净、无水印的图时才省略，并在当次出版记录里写明哪一版、为什么没有。其余卡片仍然可以没有图。
 
 ## 行情
+
+浏览器里的取数顺序：先让两个大陆可达的源竞速，都失败再读对应的 JSON，JSON 也失败再用页内备用数组。加密货币仍是 Coinbase 与 OKX。常用市场和美股是东方财富与腾讯。时间标签用 `stamp()`，成功时写成 `实时 · 东财` 或 `实时 · 腾讯`。
+
+新浪 `hq.sinajs.cn` 不用。它没有开放浏览器 CORS，而且非新浪 Referer 直接 403。script 标签也会带上本站 Referer，同样 403。第二源改用腾讯 `qt.gtimg.cn`：响应头 `Access-Control-Allow-Origin: *`，大陆可直连，普通 `fetch` 就能读。
+
+| 品种 | 东财 `push2.eastmoney.com` 与 `push2delay.eastmoney.com` | 腾讯 `qt.gtimg.cn` |
+|---|---|---|
+| 黄金 XAU | `101.GC00Y`，COMEX 黄金。`f2` 现价，`f3` 涨跌幅 | `hf_GC`。逗号分隔，字段 0 是价，字段 1 是涨跌幅 |
+| 白银 XAG | `101.SI00Y` | `hf_SI` |
+| 布伦特 BRENT | `112.B00Y` | `hf_OIL`。腾讯这个代码是布伦特，不是 WTI |
+| 美元/人民币 USDCNY | `133.USDCNH`，离岸美元兑人民币。这组接口没有在岸代码 | `whUSDCNY`，在岸。波浪号分隔，字段 3 是价，字段 13 是涨跌幅 |
+| 美股十二只 | 纳斯达克 `105.SYMBOL`。台积电在纽交所，用 `106.TSM` | `usSYMBOL`。波浪号分隔，字段 3 是价，字段 32 是涨跌幅 |
+
+东财两个主机放在同一条腿里用 `firstOk` 竞速，再和腾讯竞速。接口是 `/api/qt/ulist.np/get?fltt=2&invt=2&fields=f2,f3,f12&secids=...`。`fltt=2` 时价格是实际报价，`f3` 已经是百分数。超时沿用 `fetchT` 的 8 秒。
+
+实时美股是 NVDA AAPL MSFT AVGO AMD TSM MU INTC META GOOGL AMZN ARM。SNDK 只留在 `US_FALLBACK`，不写入 `us-quotes.json`。不要把 Yahoo、Google 或 Coinbase 当成常用市场和美股的唯一路径。
 
 三个 JSON 的形状不变：
 
@@ -163,10 +179,10 @@ AI 产业的 kicker 是 `AI产业`，中间没有空格。
 | 文件 | symbol | 怎么取 |
 |---|---|---|
 | `crypto-quotes.json` | BTC ETH SOL XRP DOGE | Coinbase Exchange：`https://api.exchange.coinbase.com/products/{PAIR}/ticker` 的 `price`，同产品 `/stats` 的 `open`。`chg = (price - open) / open * 100`。交易对是 `BTC-USD`、`ETH-USD`、`SOL-USD`、`XRP-USD`、`DOGE-USD`。`updated_et` 写成取数时的美东时间 |
-| `common-quotes.json` | XAU XAG BRENT USDCNY | Yahoo Finance chart v8 日线收盘。见下面的代码 |
-| `us-quotes.json` | NVDA AAPL MSFT AVGO AMD TSM MU INTC META GOOGL AMZN ARM | 同上，用股票代码本身。这是美东收盘，不是盘中。不要加入 SNDK |
+| `common-quotes.json` | XAU XAG BRENT USDCNY | 用上面的东财或腾讯快照。东财美元人民币是离岸 `USDCNH`，写入时 symbol 仍写 `USDCNY` |
+| `us-quotes.json` | NVDA AAPL MSFT AVGO AMD TSM MU INTC META GOOGL AMZN ARM | 美东收盘，不是盘中。休市时沿用最近一个交易日的收盘。不要加入 SNDK |
 
-Yahoo 的 v7 quote 接口会返回 401。用 v8，并带浏览器 User-Agent。`range=5d` 时的 `chartPreviousClose` 是好几天前的收盘，不能拿来算日涨跌。用最近两根非空日线收盘：
+浏览器不走 Yahoo。下面这段只是服务器侧的旧算法，Yahoo 在大陆经常打不开，刷新 JSON 时优先用上面的东财或腾讯。若仍用 Yahoo：v7 quote 接口会返回 401。用 v8，并带浏览器 User-Agent。`range=5d` 时的 `chartPreviousClose` 是好几天前的收盘，不能拿来算日涨跌。用最近两根非空日线收盘：
 
 ```python
 import json, urllib.request
@@ -186,7 +202,7 @@ chg = (closes[-1] - closes[-2]) / closes[-2] * 100
 - `CM_FALLBACK` 对齐 `common-quotes.json`
 - `US_FALLBACK` 对齐 `us-quotes.json`，并保留文件里原有的 SNDK 一行。SNDK 不在 JSON 里。没有新的公开收盘就不要改 SNDK 的旧数字，也不要把它写进 JSON。备用标签保持「美东 MM-DD 收盘（备用）」这种已有句式，只改日期。
 
-首页行情优先走浏览器里的 Coinbase / OKX 实时接口。JSON 和 `FALLBACK` 是失败时的备用。
+首页加密货币优先走浏览器里的 Coinbase / OKX。常用市场和美股优先走东财 / 腾讯。JSON 和页内备用数组只在实时源都失败时使用。
 
 ## 质量核对
 
